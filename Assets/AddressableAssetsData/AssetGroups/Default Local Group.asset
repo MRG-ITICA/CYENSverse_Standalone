@@ -1,0 +1,394 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 4a1543e486c5ea54991fa334293722b6
+  m_SerializeEntries:
+  - m_GUID: af4f1d911056f484a9be501ad17d5a1f
+    m_Address: Assets/Art/Videos/Biodiversity/c5.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - biodiversity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cd21091c8f0f68b489922e6c88bd626c
+    m_Address: Assets/Art/Videos/Biodiversity/d1.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - biodiversity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cd273260fada95e4b86d2bf2b908d7d6
+    m_Address: Assets/Art/Videos/Biodiversity/d5.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - biodiversity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a41608dde4af3464ba69a7504181b75c
+    m_Address: Assets/Art/Videos/Biodiversity/d6.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - biodiversity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 185e88d02b32f1b478922c319d0c3489
+    m_Address: Assets/Art/Videos/Biodiversity/e1.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - biodiversity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 613a97e4ed05a6b49bb8abe0ea4766a5
+    m_Address: Assets/Art/Videos/Biodiversity/e2.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - biodiversity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b555eaaba2fb93342a98522a2148d41a
+    m_Address: Assets/Art/Videos/Biodiversity/e5.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - biodiversity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0950be6cf6be2e848b2b17aa93891e1b
+    m_Address: Assets/Art/Videos/Biodiversity/e6.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - biodiversity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 06483198bcff6a345ad47396c2a0d692
+    m_Address: Assets/Art/Videos/Biodiversity/f2.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - biodiversity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a137f3de400fb774b98b194dca9a7efb
+    m_Address: Assets/Art/Videos/Biodiversity/f5.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - biodiversity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 64da169bd43cb744ca7449ecb3c5f6f1
+    m_Address: Assets/Art/Videos/Biodiversity/f6c1.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - biodiversity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fe6bf88783005bf42989886a68f06a69
+    m_Address: Assets/Art/Videos/Biodiversity/f6c2.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - biodiversity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1084e127186354242b934209b8751bd5
+    m_Address: Assets/Art/Videos/Biodiversity/g2.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - biodiversity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aa348cb675828b742860486015bd818c
+    m_Address: Assets/Art/Videos/Biodiversity/g3c1.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - biodiversity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f26bd801b57849546baea5ac946171b3
+    m_Address: Assets/Art/Videos/Biodiversity/g3c2.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - biodiversity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bb784ff2af2c62749ab75a40f3a17d5e
+    m_Address: Assets/Art/Videos/Biodiversity/g4.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - biodiversity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 258bde630422eff4b84769366c907530
+    m_Address: Assets/Art/Videos/Biodiversity/g5.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - biodiversity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b060eff1bc674c74282b088543e069ba
+    m_Address: Assets/Art/Videos/Biodiversity/g8.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - biodiversity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5f64cc589fb36c448a81bdd5a3c485fa
+    m_Address: Assets/Art/Videos/Heritage/c3.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - heritage
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 106ddd84f75b7d14f8ae16d79e67a8d6
+    m_Address: Assets/Art/Videos/Heritage/c3c1.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - heritage
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 028eb20674cc4e44a9a6593f688dadf0
+    m_Address: Assets/Art/Videos/Heritage/d2.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - heritage
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9085b35813ba6734ebcb81bff91f486a
+    m_Address: Assets/Art/Videos/Heritage/d3c2.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - heritage
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5788dd733a533ad4fb9882873f14d02c
+    m_Address: Assets/Art/Videos/Heritage/d4.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - heritage
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4de6996e401526b448be5b4733b46959
+    m_Address: Assets/Art/Videos/Heritage/d6.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - heritage
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c66e6fc8407538248916e4d3d5297274
+    m_Address: Assets/Art/Videos/Heritage/e4.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - heritage
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b471bf0054f5ce84fb1538ac83bcff9e
+    m_Address: Assets/Art/Videos/Heritage/f2.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - heritage
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c07856d9cc2ed584f99d35ebdee40653
+    m_Address: Assets/Art/Videos/Heritage/f4.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - heritage
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 77a0268395fac224383c36718c0ffda0
+    m_Address: Assets/Art/Videos/Heritage/g1.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - heritage
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3e63f621655a5db449b76cb09dc8d492
+    m_Address: Assets/Art/Videos/Heritage/g3.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - heritage
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1eecd009182d5f4478e9bd6cf590443b
+    m_Address: Assets/Art/Videos/Heritage/g8c1.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - heritage
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b9d75aaa069aba34ca8182f584c70457
+    m_Address: Assets/Art/Videos/Heritage/g8c2.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - heritage
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c619ed80e89223043893c9123a0b73dc
+    m_Address: Assets/Art/Videos/Heritage/g8c3.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - heritage
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 39b314aeadb2a9b418e95a7c7b1c4f0b
+    m_Address: Assets/Art/Videos/Heritage/g8c4.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - heritage
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f9c64fa79c4f90a449b751d898e84e09
+    m_Address: Assets/Art/Videos/Perceptions/a1.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - perceptions
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c10da39a137b63f4585b14dae020e9ad
+    m_Address: Assets/Art/Videos/Perceptions/a2c1.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - perceptions
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 449c6293c28b99644be96342056b2d8a
+    m_Address: Assets/Art/Videos/Perceptions/a2c2.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - perceptions
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bbc2bfc286f2ba04a9509883ff004558
+    m_Address: Assets/Art/Videos/Perceptions/b1.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - perceptions
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 190014d118f1b934780de54cb1f39a6a
+    m_Address: Assets/Art/Videos/Perceptions/b3.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - perceptions
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f5e5d639eb3179048b87fc5b15789a60
+    m_Address: Assets/Art/Videos/Perceptions/b4.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - perceptions
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1a6aa77ea5b7f474f889a44234d3a9ae
+    m_Address: Assets/Art/Videos/Perceptions/b5.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - perceptions
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2d803a22635ef8b4691d9586abc36f88
+    m_Address: Assets/Art/Videos/Perceptions/b6c1.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - perceptions
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fd370e3023a87d845a460662b276e6c9
+    m_Address: Assets/Art/Videos/Perceptions/b6c2.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - perceptions
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b2748f797a0fe9543a761c473c07526a
+    m_Address: Assets/Art/Videos/Perceptions/b7c1.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - perceptions
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 43f08bc9a98065a4b93457a732edb143
+    m_Address: Assets/Art/Videos/Perceptions/b7c2.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - perceptions
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d7d37488c34750647b1daed46bd763a0
+    m_Address: Assets/Art/Videos/Perceptions/b8c1.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - perceptions
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2a7287eafae64ec4281eb5eb290d2470
+    m_Address: Assets/Art/Videos/Perceptions/b8c2.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - perceptions
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f030dda1376c8e3488c7efbaa5a0e4d6
+    m_Address: Assets/Art/Videos/Perceptions/c1c1.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - perceptions
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 02ddec9d2ce9a3c49a05355346f7740a
+    m_Address: Assets/Art/Videos/Perceptions/c1c2.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - perceptions
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0ef71c593e264d848b16b6767330788f
+    m_Address: Assets/Art/Videos/Perceptions/c2.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - perceptions
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e9f2c24669ede3148a54f9deefb9974d
+    m_Address: Assets/Art/Videos/Perceptions/d7.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - perceptions
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 302d462c77542fd41aa4dffba9611ebb
+    m_Address: Assets/Art/Videos/Perceptions/d9.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - perceptions
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f5bf74ec377f53d44a8dc0fead8de067
+    m_Address: Assets/Art/Videos/Perceptions/e1.mp4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - video
+    - perceptions
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9e659c1301e142f4090f596f5b929514
+    m_Address: Assets/Art/Textures/360WithoutPeople/0.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 3bcd44e3e10055f4e8daa4c4d24fb8f5, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: c137417378bc85440b6991a33c117c6f, type: 2}
+    - {fileID: 11400000, guid: 27acc5964205bc346b18c3661e87b6b6, type: 2}
