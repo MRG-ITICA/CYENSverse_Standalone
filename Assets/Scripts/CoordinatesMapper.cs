@@ -251,9 +251,6 @@ public class CoordinatesMapper : MonoBehaviour
         Vector3 rot = Quaternion.LookRotation(XRCamera.position - markObject.transform.position).eulerAngles;
         rot.x = rot.z = 0;
         markObject.transform.rotation = Quaternion.Euler(rot);
-        markObject.GetComponent<XRSimpleInteractable>().hoverEntered
-            .AddListener(delegate { StartCoroutine(Hovering(markObject)); });
-        markObject.GetComponent<XRSimpleInteractable>().hoverExited.AddListener(delegate { HoverExit(); });
 
         return markObject;
     }
@@ -263,7 +260,6 @@ public class CoordinatesMapper : MonoBehaviour
     {
         // Set image annotation sprite
         Image annotationImage = markObject.GetComponentInChildren<Image>();
-        Debug.Log("IIIIIIIIIII" + "Images/" + originalImageController.Name + "/" + i.ToString());
         annotationImage.sprite = Resources.Load<Sprite>("Images/" + originalImageController.Name + "/" + i.ToString());
         annotationImage.preserveAspect = true;
     }
@@ -297,68 +293,8 @@ public class CoordinatesMapper : MonoBehaviour
 
             var imageController = markObject.GetComponentInChildren<ImageController360>();
             imageController.SetTextureAssetHandler(nestedPinsAssetsHandler, originalImageController);
-
-            //imageController.Interactable.hoverExited
-            //    .AddListener(delegate { HoverExit(); });
-            //imageController.Interactable.hoverEntered.AddListener(delegate
-            //{
-            //    StartCoroutine(Hovering360(markObject, originalImageName, target360));
-            //});
         }
     }
-
-    // The user is no longer hovering over the object
-    private void HoverExit()
-    {
-        if (spinner != null)
-        {
-            spinner.Hide();
-            spinner = null;
-        }
-
-        StopAllCoroutines();
-    }
-
-    IEnumerator Hovering(GameObject mark)
-    {
-        yield return new WaitForSeconds(0.5f);
-        StartCoroutine(Load(mark));
-    }
-
-    // Hovering while the image is open
-    /*IEnumerator HoveringExit(GameObject mark, Vector3 initialPosition, Vector3 initialScale)
-    {
-        yield return new WaitForSeconds(0.5f);
-        StartCoroutine(LoadExit(mark, initialPosition, initialScale));
-    }*/
-
-    // Load and show the annotation content
-    private IEnumerator Load(GameObject mark)
-    {
-        spinner = mark.GetComponentInChildren<SpinnerController>(true);
-        spinner.Show();
-        spinner.Load();
-        yield return new WaitUntil(() => spinner == null || !spinner.IsLoading());
-
-        if (spinner != null)
-        {
-            spinner.Hide();
-            spinner = null;
-        }
-
-        ShowAnnotationContent(mark);
-    }
-
-    // Load and hide the annotation content
-    /*private IEnumerator LoadExit(GameObject mark, Vector3 initialPosition, Vector3 initialScale)
-    {
-        SpinnerController spinner = mark.GetComponentInChildren<SpinnerController>(true);
-        spinner.gameObject.SetActive(true);
-        spinner.Load();
-        yield return new WaitUntil(() => !spinner.IsLoading());
-        spinner.gameObject.SetActive(false);
-        HideAnnotationContent(mark, initialPosition, initialScale);
-    }*/
 
     public void OnBakButtonHoverEntered()
     {
@@ -419,9 +355,8 @@ public class CoordinatesMapper : MonoBehaviour
         StopAllCoroutines();
     }
 
-    private void ShowAnnotationContent(GameObject mark)
+    public void ShowAnnotationContent(GameObject mark)
     {
-        //StartCoroutine(FadeOutHomeButton());
         GameObject[] annotations = GameObject.FindGameObjectsWithTag("mark");
         foreach (var item in annotations)
         {
@@ -450,84 +385,21 @@ public class CoordinatesMapper : MonoBehaviour
             .setOnComplete(FadeComplete).setOnCompleteParam(mark);
     }
 
-    /*private IEnumerator FadeOutHomeButton()
-    {
-        float elapsedTime = 0;
-        float fadeDuration = 1f;
-        Material material = goBackHome.GetComponent<MeshRenderer>().material;
-        Color color = material.color;
-        while (elapsedTime < fadeDuration)
-        {
-            elapsedTime += Time.deltaTime;
-            color.a = Mathf.Lerp(1, 0, elapsedTime / fadeDuration);
-            material.color = color;
-            yield return null;
-        }
-
-    }*/
-
     private void FadeComplete(object mark)
     {
         GameObject markGO = (GameObject)mark;
 
-        var interactableTransform = markGO.transform.GetChild(0);
-        XRSimpleInteractable interactable = interactableTransform.GetComponentInChildren<XRSimpleInteractable>(true);
-
-        interactable.gameObject.SetActive(true);
-        Vector3 newPosition = XRCamera.position +
-                              (markGO.transform.position - XRCamera.position).normalized * 0.5f;
-        newPosition.y = XRCamera.position.y - 0.35f;
-        interactableTransform.position = newPosition;
-
-        interactable.selectEntered.AddListener(delegate
-        {
-            StartCoroutine(LoadHide(markGO, initialPosition, initialScale));
-        });
-        interactable.enabled = true;
+        markGO.GetComponent<PolaroidController>().PolaroidAppears();
     }
 
-    private IEnumerator LoadHide(GameObject mark, Vector3 initialPosition, Vector3 initialScale)
-    {
-        yield return new WaitForSeconds(0.5f);
-        HideAnnotationContent(mark, initialPosition, initialScale);
-    }
-
-    private void HideAnnotationContent(GameObject mark, Vector3 initialPosition, Vector3 initialScale)
+    public void HideAnnotationContent()
     {
         LeanTween.scale(goBackHome, new Vector3(20, 20, 20), 1f);
         LeanTween.scale(goBack360.gameObject, new Vector3(7, 7, 7), 1f);
-
-        XRSimpleInteractable interactable = mark.transform.GetChild(0).GetComponentInChildren<XRSimpleInteractable>();
-        if (interactable != null)
-        {
-            interactable.selectEntered.RemoveAllListeners();
-            interactable.enabled = false;
-            interactable.gameObject.SetActive(false);
-        }
-        else
-        {
-            Debug.LogWarning($"Unable to find interactable for annotation {mark.name}");
-        }
-
-        LeanTween.move(mark, initialPosition, 1.5f);
-        LeanTween.scale(mark, new Vector3(initialScale.x, initialScale.y, mark.transform.localScale.z), 1.5f)
-            .setOnComplete(ScaleDownComplete).setOnCompleteParam(mark);
     }
 
-    public void ScaleDownComplete(object mark)
+    public void ScaleDownComplete()
     {
-        GameObject markGO = (GameObject)mark;
-        if (markGO.TryGetComponent<XRSimpleInteractable>(out var interactable))
-        {
-            interactable.hoverEntered.AddListener(delegate { StartCoroutine(Load(markGO)); });
-            interactable.hoverExited.AddListener(delegate { HoverExit(); });
-            interactable.enabled = true;
-        }
-        else
-        {
-            Debug.LogWarning($"Unable to find interactable for annotation {markGO.name}");
-        }
-
         foreach (Transform item in canvas.transform)
         {
             item.gameObject.SetActive(true);

@@ -74,7 +74,10 @@ public class TutorialVideo : MonoBehaviour
 
 	public Action<TutorialVideo> OnVideoSelected;
 
-	void OnEnable()
+	[SerializeField]
+	private SpinnerController closeButtonLoadingEffect;
+
+    void OnEnable()
 	{
 		initialImageScale = transform.localScale;
 		hoverVideoAnim.SetActive(true);
@@ -127,7 +130,7 @@ public class TutorialVideo : MonoBehaviour
 	{
 		Deactivate();
 
-		Vector3 newScale = new Vector3(1.5f, 1.5f, initialImageScale.z);
+		Vector3 newScale = new Vector3(1.8f, 1.8f, initialImageScale.z);
 		LeanTween.scale(gameObject, newScale, 1.5f).setOnComplete(EnableVideo);
 
 		frame.sprite = selectedFrame;
@@ -141,8 +144,8 @@ public class TutorialVideo : MonoBehaviour
 		EnableCloseButton();
 		StartCoroutine(instructionManager.NextInstruction(0.1f, 1));
 
-		ShowCloseVideoInstruction(0.75f);
-		ShowCloseVideoButton(1.25f);
+		//ShowCloseVideoInstruction(0.75f);
+		//ShowCloseVideoButton(1.25f);
 	}
 
 	/// <summary>
@@ -150,7 +153,7 @@ public class TutorialVideo : MonoBehaviour
 	/// </summary>
 	private void ShowCloseVideoInstruction(float interpolationTime)
 	{
-		if (!instructionCloseVideo.TryGetComponent<TextMeshProUGUI>(out var closeVideoInstructionText)) return;
+        if (!instructionCloseVideo.TryGetComponent<TextMeshProUGUI>(out var closeVideoInstructionText)) return;
 		SetFontSize(0);
 		LeanTween.value(gameObject, SetFontSize, 0, 25, interpolationTime);
 		return;
@@ -159,7 +162,7 @@ public class TutorialVideo : MonoBehaviour
 		{
 			closeVideoInstructionText.fontSize = value;
 		}
-	}
+    }
 
 	/// <summary>
 	///     Show the video button
@@ -182,21 +185,47 @@ public class TutorialVideo : MonoBehaviour
 	private void EnableCloseButton()
 	{
 		// Enable video close button
-		var xrCameraTransform = XrReferences.XrCameraTransform;
+	/*	var xrCameraTransform = XrReferences.XrCameraTransform;
 		var cameraPosition = xrCameraTransform.position;
 		// Position video close button near the user
 		Vector3 newPosition = cameraPosition + (transform.position - cameraPosition).normalized * 0.6f;
 		newPosition.y = cameraPosition.y - 0.3f;
 		var interactableTransform = closeButton.transform.parent;
-		interactableTransform.position = newPosition;
+		interactableTransform.position = newPosition;*/
 
 		closeButton.gameObject.SetActive(true);
-		closeButton.selectEntered.AddListener(delegate { StartCoroutine(LoadCloseVideo()); });
+		//closeButton.selectEntered.AddListener(delegate { StartCoroutine(LoadCloseVideo()); });
 		closeButton.enabled = true;
-		handCloseVideo.SetActive(true);
+		//handCloseVideo.SetActive(true);
 	}
 
-	private IEnumerator LoadCloseVideo()
+    public void CloseButtonHoverEntered()
+    {
+        StartCoroutine(CloseButtonHovering());
+    }
+
+    IEnumerator CloseButtonHovering()
+    {
+        yield return new WaitForSeconds(0.5f);
+        StartCoroutine(CloseButtonLoading());
+    }
+
+    public void CloseButtonHoverExited()
+    {
+        StopAllCoroutines();
+        closeButtonLoadingEffect.Hide();
+    }
+
+    IEnumerator CloseButtonLoading()
+    {
+        closeButtonLoadingEffect.Show();
+        closeButtonLoadingEffect.Load();
+        yield return new WaitUntil(() => !closeButtonLoadingEffect.IsLoading());
+        closeButtonLoadingEffect.Hide();
+        CloseVideo();
+    }
+
+    private IEnumerator LoadCloseVideo()
 	{
 		yield return new WaitForSeconds(0.6f);
 		CloseVideo();
@@ -207,7 +236,8 @@ public class TutorialVideo : MonoBehaviour
 	public void CloseVideo()
 	{
 		frame.sprite = enabledFrame;
-		handCloseVideo.SetActive(false);
+		ResetScale();
+		//handCloseVideo.SetActive(false);
 		DisableCloseButton();
 	}
 
@@ -223,6 +253,7 @@ public class TutorialVideo : MonoBehaviour
 	public void Deactivate()
 	{
 		videoPokeInteractable.enabled = false;
+		videoPokeInteractable.GetComponent<BoxCollider>().enabled = false;
 	}
 
 	public void ResetScale()

@@ -56,6 +56,13 @@ public class VideoController : MonoBehaviour
     [SerializeField]
     private SpinnerController loadingEffect;
 
+    #region Close button
+    [SerializeField]
+    private XRSimpleInteractable closeButton;
+    [SerializeField]
+    private SpinnerController closeButtonLoadingEffect;
+    #endregion
+
     #region Frame
 
     [Title("Frame")]
@@ -80,9 +87,6 @@ public class VideoController : MonoBehaviour
     #endregion Frame
 
     public float scaleFactor;
-
-    [SerializeField]
-    private XRSimpleInteractable closeButton;
 
     [SerializeField]
     private RawImage videoScreen;
@@ -313,6 +317,32 @@ public class VideoController : MonoBehaviour
         loadingEffect.Hide();
     }
 
+    public void CloseButtonHoverEntered()
+    {
+        StartCoroutine(CloseButtonHovering());
+    }
+
+    IEnumerator CloseButtonHovering()
+    {
+        yield return new WaitForSeconds(0.5f);
+        StartCoroutine(CloseButtonLoading());
+    }
+
+    public void CloseButtonHoverExited()
+    {
+        StopAllCoroutines();
+        closeButtonLoadingEffect.Hide();
+    }
+
+    IEnumerator CloseButtonLoading()
+    {
+        closeButtonLoadingEffect.Show();
+        closeButtonLoadingEffect.Load();
+        yield return new WaitUntil(() => !closeButtonLoadingEffect.IsLoading());
+        closeButtonLoadingEffect.Hide();
+        CloseVideo();
+    }
+
     private void ScaleUp()
     {
         gameObject.transform.localScale *= scaleFactor;
@@ -432,32 +462,6 @@ public class VideoController : MonoBehaviour
         videoGenerator.ResetVideos();
     }
 
-    /*private void ResetVideo()
-    {
-        if (videoPlayer.isPlaying)
-        {
-            videoPlayer.Stop();
-            transform.localPosition = initialPosition;
-            transform.localScale = initialImageScale;
-        }
-        if (category == categoryManager.currentCategory)
-        {
-            RawImage vImg = GetComponent<RawImage>();
-            vImg.CrossFadeAlpha(1, 0.5f, false);
-            Image frame = GetComponentInChildren<Image>();
-            frame.CrossFadeAlpha(1, 0.5f, false);
-            GetComponentInChildren<XRSimpleInteractable>().enabled = true;
-        }
-        else
-        {
-            RawImage vImg = GetComponent<RawImage>();
-            vImg.CrossFadeAlpha(0.2f, 0.5f, false);
-            Image frame = GetComponentInChildren<Image>();
-            frame.CrossFadeAlpha(0.2f, 0.5f, false);
-            GetComponentInChildren<XRSimpleInteractable>().enabled = false;
-        }
-    }*/
-
     private void EnableVideo()
     {
         EnableCloseButton();
@@ -465,19 +469,7 @@ public class VideoController : MonoBehaviour
 
     private void EnableCloseButton()
     {
-        var xrCamera = XrReferences.XrCamera;
-
-        // Enable video close button
-        var xrCameraTransform = XrReferences.XrCameraTransform;
-        // Position video close button near the user
-        Vector3 newPosition = xrCameraTransform.position +
-                              (transform.position - xrCameraTransform.position).normalized * 0.6f;
-        newPosition.y = xrCameraTransform.position.y - 0.3f;
-        var interactableTransform = closeButton.transform.parent;
-        interactableTransform.position = newPosition;
-
         closeButton.gameObject.SetActive(true);
-        closeButton.selectEntered.AddListener(delegate { StartCoroutine(LoadCloseVideo()); });
         closeButton.enabled = true;
     }
 
@@ -501,7 +493,6 @@ public class VideoController : MonoBehaviour
     public void DisableCloseButton()
     {
         // Disable video close button
-        closeButton.selectEntered.RemoveAllListeners();
         closeButton.enabled = false;
         closeButton.gameObject.SetActive(false);
     }

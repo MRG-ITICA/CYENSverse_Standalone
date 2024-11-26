@@ -153,66 +153,6 @@ public class ImageController : MonoBehaviour, IImageController
     {
         UpdateAssetTargets();
         StartCoroutine(ObjectSelected());
-        /*if (isTextureReady && assetHandle.IsValid())
-        {
-            Debug.Log($"Asset for image {Name} is already loaded");
-            StartCoroutine(ObjectSelected());
-            return true;
-        }
-        StartCoroutine(LoadAssetAsync(true));
-        return false;*/
-    }
-
-    protected IEnumerator LoadAssetAsync(bool update)
-    {
-        if (update)
-        {
-            Debug.Log("update");
-            UpdateAssetTargets();
-            StartCoroutine(ObjectSelected());
-            yield break;
-        }
-
-        Debug.Log($"Loading asset for image {Name} with handle {assetHandle.IsValid()}");
-        if (assetHandle.IsValid() && assetHandle.Status == AsyncOperationStatus.Succeeded) yield break;        
-        assetHandle = textureReference.LoadAssetAsync<Texture>();
-        isTextureReady = false;
-
-        Debug.Log($"Waiting to load asset for image {Name}");
-        var loadWaitTime = new WaitForFixedUpdate();
-        float elapsedTime = 0;
-        //var loadWaitTime = new WaitForSeconds(2);
-        while (!assetHandle.IsDone)
-        {
-            Debug.Log($"Completion percentage for {Name} at {assetHandle.PercentComplete} and status {assetHandle.Status}");
-            elapsedTime += Time.fixedDeltaTime;
-            if (elapsedTime > 1)
-            {
-                //assetHandle.Release();
-                textureReference.ReleaseAsset();
-                Debug.Log("release");
-                yield return new WaitForEndOfFrame();
-                elapsedTime = 0;
-                Debug.Log("load again");
-                assetHandle = textureReference.LoadAssetAsync<Texture>();
-            }
-            yield return loadWaitTime;
-        }
-        //StartCoroutine(ObjectSelected());
-        Debug.Log($"Finished loading asset for image {Name}");
-        if (assetHandle.Status != AsyncOperationStatus.Succeeded)
-        {
-            Debug.LogWarning($"Failed to load asset for image {Name}");
-            yield return new WaitForSeconds(0.1f);
-            StartCoroutine(LoadAssetAsync(update));
-            yield break;
-        }
-
-        Debug.Log($"Asset for image {Name} was loaded successfuly");
-
-        texture = assetHandle.Result;
-        Debug.Log("have set texture to assethandle result " + texture.name);
-
     }
 
     private void UpdateAssetTargets()
@@ -245,7 +185,6 @@ public class ImageController : MonoBehaviour, IImageController
         loadingEffect.Load();
         yield return new WaitUntil(() => !loadingEffect.IsLoading());
         loadingEffect.Hide();
-        //ObjectSelected();
     }
 
     
@@ -272,7 +211,6 @@ public class ImageController : MonoBehaviour, IImageController
 
         if (category == categoryManager.currentCategoryIndex)
         {
-            StartCoroutine(LoadAssetAsync(false));
             GetComponentInChildren<XRSimpleInteractable>().enabled = true;
             //interactionAffordance.SetActive(true);
             color.a = 1;
