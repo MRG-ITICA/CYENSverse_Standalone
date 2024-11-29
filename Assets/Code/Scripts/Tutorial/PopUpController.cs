@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TutorialWord : MonoBehaviour
+public class PopUpController : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

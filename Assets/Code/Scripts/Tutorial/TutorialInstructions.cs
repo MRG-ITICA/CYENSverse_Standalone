@@ -7,7 +7,7 @@ using UnityEngine.Video;
 public class TutorialInstructions : MonoBehaviour
 {
 
-    [SerializeField]
+    /*[SerializeField]
     private TextMeshProUGUI[] instructionLabels;
 
     [SerializeField]
@@ -20,29 +20,40 @@ public class TutorialInstructions : MonoBehaviour
     private CanvasGroup canvasGroup;
 
     [SerializeField]
-    private CanvasGroup videoComponent;
+    private CanvasGroup videoComponent;*/
 
     [SerializeField]
     private GameObject wordsComponent;
 
-    [SerializeField]
+    /*[SerializeField]
     private TMP_Text skipVideo;
 
-    private int instructionCount = 0;
+    private int instructionCount = 0;*/
 
     void OnEnable()
     {
         PlayerPrefs.SetString("ageRange", "Prefer not to say");
-        var instructionTransform = GetComponent<Transform>();
+        //XrReferences.Instance.PositionTowardsCamera(wordsComponent.transform);
 
-        //XrReferences.Instance.PositionTowardsCamera(instructionTransform);
+        /*var instructionTransform = GetComponent<Transform>();
+
         instructionLabel = instructionLabels[0];
-        instructionLabel.text = instructions[instructionCount];
+        instructionLabel.text = instructions[instructionCount];*/
 
-        StartCoroutine(StartTutorial());
+        FadeInAge();
     }
 
-    private IEnumerator StartTutorial()
+    private void FadeInAge()
+    {
+        wordsComponent.SetActive(true);
+        TMP_Text[] texts = wordsComponent.GetComponentsInChildren<TMP_Text>();
+        foreach (TMP_Text t in texts)
+        {
+            FadeInWord(t, 2);
+        }
+    }
+
+    /*private IEnumerator StartTutorial()
     {
         yield return new WaitForSeconds(2f);
         FadeInInstruction();
@@ -99,7 +110,7 @@ public class TutorialInstructions : MonoBehaviour
     public void FadeOutVideo()
     {
         videoComponent.LeanAlpha(0, 1.5f);
-    }
+    }*/
 
     public void FadeInWord(TMP_Text text, float duration)
     {
