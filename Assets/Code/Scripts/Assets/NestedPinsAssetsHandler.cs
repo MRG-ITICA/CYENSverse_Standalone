@@ -86,9 +86,4 @@ public class NestedPinsAssetsHandler : MonoBehaviour
         loadHandle.Completed += textureHandle => { OnAssetLoadCallback(loadHandle, loadHandle.Result); };
         yield return loadHandle;
     }
-
-    public void ReturnFromNested360Image(IImageController parentImage)
-    {
-        coordinatesMapping.ReturnTo360Image(parentImage);
-    }
 }

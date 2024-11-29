@@ -292,7 +292,10 @@ public class CoordinatesMapper : MonoBehaviour
             markObject.name = target360;
 
             var imageController = markObject.GetComponentInChildren<ImageController360>();
-            imageController.SetTextureAssetHandler(nestedPinsAssetsHandler, originalImageController);
+            //imageController.SetTextureAssetHandler(nestedPinsAssetsHandler, originalImageController);
+            string texPath = "360WithoutPeople/" + target360;
+            Texture tex = Resources.Load<Texture>(texPath);
+            imageController.SetTexture(tex, originalImageController);
         }
     }
 
@@ -404,10 +407,6 @@ public class CoordinatesMapper : MonoBehaviour
         {
             item.gameObject.SetActive(true);
         }
-    }
-
-    public void ReturnTo360Image(IImageController parentImage)
-    {
     }
 
     public void HideHomeButton()

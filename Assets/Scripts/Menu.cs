@@ -24,13 +24,11 @@ public class Menu : MonoBehaviour
     #region Variables
 
     [Title("Interaction")]
-#if UNITY_EDITOR
     [SerializeField]
     private bool hideOnStart = false;
 
     [SerializeField]
     private bool autoLoadCyensVerse = false;
-#endif //UNITY_EDITOR
 
     public float imageScaleFactor = 1.2f;
 
@@ -63,16 +61,13 @@ public class Menu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-#if UNITY_EDITOR
         if (autoLoadCyensVerse)
         {
             LoadCyensVerse();
             return;
         }
-
         if (!hideOnStart) return;
         gameObject.SetActive(false);
-#endif //UNITY_EDITOR
     }
 
     private void OnEnable()

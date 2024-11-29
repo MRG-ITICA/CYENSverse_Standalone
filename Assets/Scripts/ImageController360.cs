@@ -85,17 +85,23 @@ public class ImageController360 : MonoBehaviour, IImageController
         fader = XrReferences.FadeToBlack;
     }
 
-    private void OnDestroy()
+    /*private void OnDestroy()
     {
-        UnloadAsset();
-        //nestedPinsAssetsHandler.ReturnFromNested360Image(parentImage);
+        //UnloadAsset();
+        ReturnFromNested360Image(parentImage);
     }
 
-    public void SetTextureAssetHandler(NestedPinsAssetsHandler nestedPinsAssetsHandlerValue,
+    /*public void SetTextureAssetHandler(NestedPinsAssetsHandler nestedPinsAssetsHandlerValue,
         IImageController parentImageValue)
     {
         parentImage = parentImageValue;
         nestedPinsAssetsHandler = nestedPinsAssetsHandlerValue;
+    }*/
+
+    public void SetTexture(Texture textureValue, IImageController parentImageValue)
+    {
+        texture = textureValue;
+        parentImage = parentImageValue;
     }
 
     public void HoverEntered()
@@ -120,7 +126,7 @@ public class ImageController360 : MonoBehaviour, IImageController
         gameObject.transform.localScale = initialScale;
     }
 
-    protected bool LoadAsset()
+    /*protected bool LoadAsset()
     {
         if (isTextureReady && assetHandle.IsValid())
         {
@@ -148,16 +154,20 @@ public class ImageController360 : MonoBehaviour, IImageController
         texture = null;
         isTextureReady = false;
         OnTextureLoadedCallback.ResetInvocation();
-    }
+    }*/
 
     IEnumerator Loading()
     {
-        LoadAsset();
+        //LoadAsset();
+
+        StartCoroutine(ObjectSelected());
         loadingEffect.Show();
         loadingEffect.Load();
+        isTextureReady = true;
         yield return new WaitUntil(() => !loadingEffect.IsLoading());
         loadingEffect.Hide();
-        StartCoroutine(ObjectSelected());
+
+        OnTextureLoadedCallback.Invoke(this, texture, parentImage);
     }
 
     public void HoverExited()
@@ -171,5 +181,7 @@ public class ImageController360 : MonoBehaviour, IImageController
     {
         yield return new WaitForSeconds(1);
         fader.Load360Image(this);
+
     }
+
 }
