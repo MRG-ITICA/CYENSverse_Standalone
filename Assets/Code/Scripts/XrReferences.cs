@@ -340,4 +340,9 @@ public class XrReferences : Singleton<XrReferences>
     }
 
     #endregion XR Camera
+
+    public bool FacingPins()
+    {
+        return Mathf.Abs(xrCamera.transform.rotation.y) < 0.5f;
+    }
 }

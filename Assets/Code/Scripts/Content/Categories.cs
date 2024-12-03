@@ -209,6 +209,7 @@ public class Categories : Singleton<Categories>
 
         yield return new WaitForSeconds(loadDuration - 1);
 
+        FindObjectOfType<PopUpController>().EnteredMainEnvironment();
         ChangeCategory();
 
         //StartCoroutine(FadeTransitionCategory(1, 0, 0.5f, false));

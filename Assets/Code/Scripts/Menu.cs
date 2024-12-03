@@ -130,6 +130,7 @@ public class Menu : MonoBehaviour
 
     public void LoadCyensVerse()
     {
+        StartCoroutine(FindObjectOfType<PopUpController>().FadeOutPopUp());
         fader.LoadMainScene(true, 0.5f, 3f);
     }
 

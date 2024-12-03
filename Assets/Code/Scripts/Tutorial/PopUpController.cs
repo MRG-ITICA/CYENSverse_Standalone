@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Animations;
 using UnityEngine.UI;
 
 public class PopUpController : MonoBehaviour
@@ -48,6 +49,16 @@ public class PopUpController : MonoBehaviour
 
     private CanvasGroup canvasGroup;
 
+    private float time = 0;
+    private float timeVideos = 0;
+    private float timePins = 0;
+
+    public bool selectedVideo = false;
+    public bool selectedPin = false;
+
+    private bool turnAroundShown = false;
+
+    private bool entered = false;
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +70,7 @@ public class PopUpController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Fade out pop-up after set total duration
         if (canvasGroup.alpha == 1)
         {
             if (currentDuration < popUpTotalDuration)
@@ -71,12 +83,62 @@ public class PopUpController : MonoBehaviour
                 StartCoroutine(FadeOutPopUp());
             }
         }
+        if (entered)
+        {
+            time += Time.deltaTime;
+            timeVideos += Time.deltaTime;
+            timePins += Time.deltaTime;
+        }
+
+        if (time > 20 && !turnAroundShown)
+        {
+            bool facingPins = FindObjectOfType<XrReferences>().FacingPins();
+            // Show turn around pop up
+            if (!selectedVideo && facingPins || !selectedPin && !facingPins)
+            {
+                ShowInstructionWithImage(turnAroundInstruction, turnAroundImage);
+                turnAroundShown = true;
+                time = 0;
+            }
+        }
+        if (timeVideos > 30)
+        {
+            bool facingPins = FindObjectOfType<XrReferences>().FacingPins();
+            if (!selectedVideo && !facingPins)
+            {
+                ShowInstructionWithRayAnimation(videoInstruction);
+                timeVideos = 0;
+            }
+        }
+        if (timePins > 30) {
+            bool facingPins = FindObjectOfType<XrReferences>().FacingPins();
+            if (!selectedPin && facingPins)
+            {
+                ShowInstructionWithRayAnimation(pinInstruction);
+                timePins = 0;
+            }
+        }
+    }
+
+    public void EnteredMainEnvironment()
+    {
+        entered = true;
+        bool facingPins = FindObjectOfType<XrReferences>().FacingPins();
+        if (facingPins)
+        {
+            ShowInstructionWithRayAnimation(pinInstruction);
+        } else
+        {
+            ShowInstructionWithRayAnimation(videoInstruction);
+        }
     }
 
     public void ShowInstructionWithImage(string text, Sprite sprite)
     {
         StartCoroutine(FadeInPopUp());
         instructionText.text = text;
+        instructionVisual.SetActive(true);
+        handAnimation.SetActive(false);
         instructionVisual.GetComponent<Image>().sprite = sprite;
     }
 
@@ -84,11 +146,14 @@ public class PopUpController : MonoBehaviour
     {
         StartCoroutine(FadeInPopUp());
         instructionText.text = text;
+        instructionVisual.SetActive(false);
         handAnimation.SetActive(true);
     }
 
     private IEnumerator FadeInPopUp()
     {
+        canvasGroup.alpha = 0;
+        GetComponent<ParentConstraint>().constraintActive = true;
         currentDuration = 0;
         float elapsedTime = 0;
         float fadeDuration = 0.5f;
@@ -99,10 +164,13 @@ public class PopUpController : MonoBehaviour
             canvasGroup.alpha = Mathf.Lerp(0, 1, elapsedTime * inverseFadeDuration);
             yield return null;
         }
+        yield return new WaitForEndOfFrame();
+        GetComponent<ParentConstraint>().constraintActive = false;
     }
 
-    private IEnumerator FadeOutPopUp()
+    public IEnumerator FadeOutPopUp()
     {
+        handAnimation.SetActive(false);
         float elapsedTime = 0;
         float fadeDuration = 0.5f;
         float inverseFadeDuration = 1f / fadeDuration;
@@ -112,6 +180,5 @@ public class PopUpController : MonoBehaviour
             canvasGroup.alpha = Mathf.Lerp(1, 0, elapsedTime * inverseFadeDuration);
             yield return null;
         }
-        handAnimation.SetActive(false);
     }
 }

@@ -426,6 +426,7 @@ public class VideoController : MonoBehaviour
     // Called when the video is selected through the interactor
     public void FocusPlayVideo()
     {
+        FindObjectOfType<PopUpController>().selectedVideo = true;
         if (videoPlayer.isPlaying)
         {
             return;
