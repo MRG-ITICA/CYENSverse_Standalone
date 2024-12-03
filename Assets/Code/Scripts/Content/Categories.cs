@@ -205,13 +205,13 @@ public class Categories : Singleton<Categories>
             ? categories[currentCategoryIndex].name
             : "future";
 
-        StartCoroutine(FadeTransitionCategory(0, 1, 0.5f));
+        //StartCoroutine(FadeTransitionCategory(0, 1, 0.5f));
 
         yield return new WaitForSeconds(loadDuration - 1);
 
         ChangeCategory();
 
-        StartCoroutine(FadeTransitionCategory(1, 0, 0.5f, false));
+        //StartCoroutine(FadeTransitionCategory(1, 0, 0.5f, false));
         XrReferences.Instance.ChangeRayCastCullingMask();
     }
 
@@ -277,77 +277,6 @@ public class Categories : Singleton<Categories>
     }
 
     #endregion Audio Playback
-
-
-    private void LoadAll360Assets()
-    {
-        ImageController[] all = FindObjectsOfType<ImageController>();
-
-        foreach (ImageController image in all)
-        {
-
-            if (image.category == currentCategoryIndex)
-            {
-                currentImage = image;
-                StartCoroutine(LoadAssetAsync());
-            }
-        }
-    }
-
-    protected IEnumerator LoadAssetAsync()
-    {
-        AssetReference textureReference = currentImage.textureReference;
-
-        AsyncOperationHandle<Texture> assetHandle = textureReference.LoadAssetAsync<Texture>();
-        string Name = currentImage.name;
-
-        Debug.Log($"Loading asset for image {Name} with handle {assetHandle.IsValid()}");
-        if (assetHandle.IsValid() && assetHandle.Status == AsyncOperationStatus.Succeeded) yield break;
-
-        Debug.Log($"Waiting to load asset for image {Name}");
-        var loadWaitTime = new WaitForFixedUpdate();
-        //float elapsedTime = 0;
-        //var loadWaitTime = new WaitForSeconds(2);
-        while (!assetHandle.IsDone)
-        {
-            Debug.Log($"Completion percentage for {Name} at {assetHandle.PercentComplete} and status {assetHandle.Status}");
-            /*elapsedTime += Time.fixedDeltaTime;
-            if (elapsedTime > 2)
-            {
-                assetHandle.Release();
-                textureReference.ReleaseAsset();
-                Debug.Log("release");
-                yield return new WaitForEndOfFrame();
-                elapsedTime = 0;
-                Debug.Log("load again");
-                assetHandle = textureReference.LoadAssetAsync<Texture>();
-            }*/
-            yield return loadWaitTime;
-        }
-
-        Debug.Log($"Finished loading asset for image {Name}");
-        if (assetHandle.Status != AsyncOperationStatus.Succeeded)
-        {
-            Debug.LogWarning($"Failed to load asset for image {Name}");
-            yield return new WaitForSeconds(0.1f);
-            StartCoroutine(LoadAssetAsync());
-            yield break;
-        }
-        ImageController[] all = FindObjectsOfType<ImageController>();
-        foreach (ImageController image in all)
-        {
-
-            if (image.name == currentImage.name)
-            {
-               // image.skyboxTexture = assetHandle.Result;
-              //  Debug.Log("skybox texture name: " + image.skyboxTexture.name);
-            }
-        }
-        //currentImage.skyboxTexture = assetHandle.Result;
-       
-        Debug.Log($"Asset for image {Name} was loaded successfuly");
-    }
-
 
     #region Surface Videos
 
@@ -415,10 +344,14 @@ public class Categories : Singleton<Categories>
         transitioning = true;
         transitionSource.Play();
 
-        if (currentCategoryIndex < numberOfCategories)
+        /*if (currentCategoryIndex < numberOfCategories)
             fadeController.LoadMainScene(false, 1f, 3.5f);
         else
+            XrReferences.FadeToWhite.FadeFromTransparency(1f);*/
+        if (currentCategoryIndex == numberOfCategories)
+        {
             XrReferences.FadeToWhite.FadeFromTransparency(1f);
+        }
 
         StartCoroutine(FadeAudio(1, 0, 1f));
 
@@ -428,7 +361,7 @@ public class Categories : Singleton<Categories>
 
         if (currentCategoryIndex < numberOfCategories)
         {
-            transitionCategoryLabel.text = categories[currentCategoryIndex].name;
+            //transitionCategoryLabel.text = categories[currentCategoryIndex].name;
         }
         else
         {
@@ -438,7 +371,7 @@ public class Categories : Singleton<Categories>
             transitionCategoryLabel.color = color;
         }
 
-        StartCoroutine(FadeTransitionCategory(0, 1, 0.5f));
+        //StartCoroutine(FadeTransitionCategory(0, 1, 0.5f));
 
         if (currentCategoryIndex < numberOfCategories)
         {
@@ -463,10 +396,10 @@ public class Categories : Singleton<Categories>
         }
         StartCoroutine(FadeAudio(0, 1, 1));
 
-        StartCoroutine(FadeTransitionCategory(1, 0, 0.5f, false));
+        //StartCoroutine(FadeTransitionCategory(1, 0, 0.5f, false));
 
         yield return new WaitForSeconds(1);
-        videoGenerator.ResetVideos();
+        //videoGenerator.ResetVideos();
 
         transitionCategoryLabel.text = string.Empty;
         transitioning = false;

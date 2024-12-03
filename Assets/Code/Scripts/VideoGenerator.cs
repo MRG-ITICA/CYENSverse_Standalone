@@ -58,7 +58,7 @@ public class VideoGenerator : MonoBehaviour
         rotator = GameObject.FindGameObjectWithTag("rotator");
         if (categoryManager == null)
             categoryManager = Categories.Instance;
-        categoryManager.onTransition += ResetVideos;
+        //categoryManager.onTransition += ResetVideos;
 
         //videoWidth = (int)videoObjectPrefab.GetComponent<RectTransform>().rect.width;
         //videoHeight = (int)videoObjectPrefab.GetComponent<RectTransform>().rect.height;

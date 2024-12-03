@@ -103,7 +103,7 @@ public class ContentController : MonoBehaviour
         SetFloor360Mode(true);
 
         yRotationBeforeEnteringImage = XrReferences.XrCamera.transform.localEulerAngles.y;
-        videoGenerator.ResetVideos();
+        //videoGenerator.ResetVideos();
         teleportCapsule.SetActive(true);
 
         XrReferences.Instance.ChangeRayCastCullingMask(uiInteractionCullingMask.value);

@@ -49,6 +49,9 @@ public class Menu : MonoBehaviour
     [SerializeField]
     private Material categorySkybox;
 
+    [SerializeField]
+    private PopUpController popUpController;
+
     #endregion Variables
 
     #region Unity Messages
@@ -80,6 +83,7 @@ public class Menu : MonoBehaviour
         gameObject.SetActive(true);
         RenderSettings.skybox = categorySkybox;
         skyboxPlayer.clip = menuSkyboxVideo;
+        popUpController.ShowInstructionWithRayAnimation(popUpController.introductionInstructions[1]);
     }
 
     #endregion Unity Messages

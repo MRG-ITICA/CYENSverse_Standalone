@@ -459,7 +459,7 @@ public class VideoController : MonoBehaviour
     private void OnVideoFinished(VideoPlayer source)
     {
         CloseVideo();
-        videoGenerator.ResetVideos();
+        //videoGenerator.ResetVideos();
     }
 
     private void EnableVideo()
@@ -482,7 +482,7 @@ public class VideoController : MonoBehaviour
     public void CloseVideo()
     {
         LeanTween.move(gameObject, initialPosition, 1f);
-        LeanTween.scale(gameObject, initialImageScale, 1f).setOnComplete(videoGenerator.ResetVideos);
+        LeanTween.scale(gameObject, initialImageScale, 1f);//.setOnComplete(videoGenerator.ResetVideos);
 
         frame.sprite = viewedFrame;
         SetToPreviewScreen();

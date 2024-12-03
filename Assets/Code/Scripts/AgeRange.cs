@@ -79,11 +79,7 @@ public class AgeRange : MonoBehaviour
         loadingEffect.Hide();
         interactable.hoverExited.RemoveAllListeners();
         SaveAge();
-        //XrReferences.FadeToBlack.FadeFromTransparency(0.5f);
-        //yield return new WaitForSeconds(1f);
         tutorial.SetActive(false);
-        XrReferences.XrCameraOffset.Rotate(0, 180, 0);
-        //XrReferences.FadeToBlack.FadeToTransparency(0.5f);
         menu.Show();
     }
 

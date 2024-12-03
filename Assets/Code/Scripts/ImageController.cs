@@ -106,7 +106,7 @@ public class ImageController : MonoBehaviour, IImageController
             interactable = GetComponentInChildren<XRSimpleInteractable>();
 
         categoryManager = FindAnyObjectByType<Categories>();
-        categoryManager.onTransition += FadePins;
+        //categoryManager.onTransition += FadePins;
 
         material = gameObject.GetComponent<MeshRenderer>().materials[0];
 
