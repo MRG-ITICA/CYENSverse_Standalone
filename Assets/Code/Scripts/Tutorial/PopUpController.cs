@@ -21,13 +21,13 @@ public class PopUpController : MonoBehaviour
     private string videoInstruction;
 
     [SerializeField]
-    private string exit360Instruction;
+    public string exit360Instruction;
 
     [SerializeField]
-    private string openPolaroidInstruction;
+    public string openPolaroidInstruction;
 
     [SerializeField]
-    private string closeContentInstruction;
+    public string closeContentInstruction;
     #endregion
 
     [SerializeField]
@@ -60,11 +60,17 @@ public class PopUpController : MonoBehaviour
 
     private bool entered = false;
 
+    private ContentController contentController;
+
+    private XrReferences xrReferences;
+
     // Start is called before the first frame update
     void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
-        ShowInstructionWithRayAnimation(introductionInstructions[0]);
+        ShowInstructionWithRayAnimation(introductionInstructions[0], 2f, 6);
+        contentController = FindObjectOfType<ContentController>();
+        xrReferences = FindObjectOfType<XrReferences>();
     }
 
     // Update is called once per frame
@@ -90,31 +96,31 @@ public class PopUpController : MonoBehaviour
             timePins += Time.deltaTime;
         }
 
-        if (time > 20 && !turnAroundShown)
+        if (time > 20 && !turnAroundShown && !contentController.in360)
         {
-            bool facingPins = FindObjectOfType<XrReferences>().FacingPins();
+            bool facingPins = xrReferences.FacingPins();
             // Show turn around pop up
-            if (!selectedVideo && facingPins || !selectedPin && !facingPins)
+            if (!selectedVideo && facingPins)
             {
-                ShowInstructionWithImage(turnAroundInstruction, turnAroundImage);
+                ShowInstructionWithImage(turnAroundInstruction, turnAroundImage, 0, 6);
                 turnAroundShown = true;
                 time = 0;
             }
         }
-        if (timeVideos > 30)
+        if (timeVideos > 20 && !contentController.in360)
         {
-            bool facingPins = FindObjectOfType<XrReferences>().FacingPins();
-            if (!selectedVideo && !facingPins)
+            bool facingVideos = xrReferences.FacingVideos();
+            if (!selectedVideo && facingVideos)
             {
-                ShowInstructionWithRayAnimation(videoInstruction);
+                ShowInstructionWithRayAnimation(videoInstruction, 0, 6);
                 timeVideos = 0;
             }
         }
-        if (timePins > 30) {
-            bool facingPins = FindObjectOfType<XrReferences>().FacingPins();
+        if (timePins > 20 && !contentController.in360) {
+            bool facingPins = xrReferences.FacingPins();
             if (!selectedPin && facingPins)
             {
-                ShowInstructionWithRayAnimation(pinInstruction);
+                ShowInstructionWithRayAnimation(pinInstruction, 0, 6);
                 timePins = 0;
             }
         }
@@ -123,35 +129,47 @@ public class PopUpController : MonoBehaviour
     public void EnteredMainEnvironment()
     {
         entered = true;
-        bool facingPins = FindObjectOfType<XrReferences>().FacingPins();
+        bool facingPins = xrReferences.FacingPins();
+        bool facingVideos = xrReferences.FacingVideos();
         if (facingPins)
         {
-            ShowInstructionWithRayAnimation(pinInstruction);
-        } else
+            ShowInstructionWithRayAnimation(pinInstruction, 2, 6);
+        } else if (facingVideos)
         {
-            ShowInstructionWithRayAnimation(videoInstruction);
+            ShowInstructionWithRayAnimation(videoInstruction, 2, 6);
         }
     }
 
-    public void ShowInstructionWithImage(string text, Sprite sprite)
+    public void ShowInstructionWithImage(string text, Sprite sprite, float delay, float duration)
     {
-        StartCoroutine(FadeInPopUp());
+        StartCoroutine(FadeOutPopUp());
+        SetPopUpDuration(duration);
+        StartCoroutine(FadeInPopUp(delay));
         instructionText.text = text;
         instructionVisual.SetActive(true);
         handAnimation.SetActive(false);
         instructionVisual.GetComponent<Image>().sprite = sprite;
     }
 
-    public void ShowInstructionWithRayAnimation(string text)
+    public void ShowInstructionWithRayAnimation(string text, float delay, float duration)
     {
-        StartCoroutine(FadeInPopUp());
+        StartCoroutine(FadeOutPopUp());
+        SetPopUpDuration(duration);
+        StartCoroutine(FadeInPopUp(delay));
         instructionText.text = text;
         instructionVisual.SetActive(false);
+        StartCoroutine(ActivateHandAnimation(delay));
+    }
+    
+    private IEnumerator ActivateHandAnimation(float delay)
+    {
+        yield return new WaitForSeconds(delay);
         handAnimation.SetActive(true);
     }
 
-    private IEnumerator FadeInPopUp()
+    private IEnumerator FadeInPopUp(float delay)
     {
+        yield return new WaitForSeconds(delay);
         canvasGroup.alpha = 0;
         GetComponent<ParentConstraint>().constraintActive = true;
         currentDuration = 0;
@@ -172,7 +190,7 @@ public class PopUpController : MonoBehaviour
     {
         handAnimation.SetActive(false);
         float elapsedTime = 0;
-        float fadeDuration = 0.5f;
+        float fadeDuration = 0.2f;
         float inverseFadeDuration = 1f / fadeDuration;
         while (elapsedTime < fadeDuration)
         {
@@ -180,5 +198,10 @@ public class PopUpController : MonoBehaviour
             canvasGroup.alpha = Mathf.Lerp(1, 0, elapsedTime * inverseFadeDuration);
             yield return null;
         }
+    }
+
+    private void SetPopUpDuration(float duration)
+    {
+        popUpTotalDuration = duration;
     }
 }

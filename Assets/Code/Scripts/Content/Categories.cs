@@ -209,11 +209,12 @@ public class Categories : Singleton<Categories>
 
         yield return new WaitForSeconds(loadDuration - 1);
 
-        FindObjectOfType<PopUpController>().EnteredMainEnvironment();
         ChangeCategory();
 
         //StartCoroutine(FadeTransitionCategory(1, 0, 0.5f, false));
         XrReferences.Instance.ChangeRayCastCullingMask();
+
+        FindObjectOfType<PopUpController>().EnteredMainEnvironment();
     }
 
     // Make actual transition to next category
@@ -339,8 +340,8 @@ public class Categories : Singleton<Categories>
     // Trigger transition audios and videos
     private IEnumerator Transition()
     {
-        XrReferences.RightRayInteractor.enabled = false;
-        XrReferences.LeftRayInteractor.enabled = false;
+        //XrReferences.RightRayInteractor.enabled = false;
+        //XrReferences.LeftRayInteractor.enabled = false;
 
         transitioning = true;
         transitionSource.Play();
@@ -405,8 +406,8 @@ public class Categories : Singleton<Categories>
         transitionCategoryLabel.text = string.Empty;
         transitioning = false;
 
-        XrReferences.RightRayInteractor.enabled = true;
-        XrReferences.LeftRayInteractor.enabled = true;
+        //XrReferences.RightRayInteractor.enabled = true;
+        //XrReferences.LeftRayInteractor.enabled = true;
     }
 
     private IEnumerator FadeTransitionCategory(float fromAlpha, float toAlpha, float duration,

@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Video;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class PolaroidController : MonoBehaviour
@@ -21,6 +23,22 @@ public class PolaroidController : MonoBehaviour
 
     Vector3 initialPosition;
     Vector3 initialScale;
+
+    private bool polaroidActive = false;
+    private float time = 0;
+
+    private void Update()
+    {
+        if (polaroidActive)
+        {
+            time += Time.deltaTime;
+            if (time >= 20)
+            {
+                StartCoroutine(LoadHide());
+                time = 0;
+            }
+        }
+    }
 
     public void HoverEntered()
     {
@@ -52,9 +70,26 @@ public class PolaroidController : MonoBehaviour
 
     public void PolaroidAppears()
     {
+        PopUpController popUpController = FindObjectOfType<PopUpController>();
+        ContentController contentController = FindObjectOfType<ContentController>();
+        if (!contentController.openedPolaroidBefore && contentController.in360)
+        {
+            StartCoroutine(ShowCloseContentInstruction());
+        }
+        contentController.OpenedPolaroid();
+        polaroidActive = true;
         closeButton.gameObject.SetActive(true);
     }
 
+    private IEnumerator ShowCloseContentInstruction()
+    {
+        yield return new WaitForSeconds(5);
+        if (polaroidActive)
+        {
+            PopUpController popUpController = FindObjectOfType<PopUpController>();
+            popUpController.ShowInstructionWithRayAnimation(popUpController.closeContentInstruction, 0, 4);
+        }
+    }
     public void CloseButtonHoverExited()
     {
         StopAllCoroutines();
@@ -101,6 +136,7 @@ public class PolaroidController : MonoBehaviour
 
     private void HideAnnotationContent(Vector3 initialPosition, Vector3 initialScale)
     {
+        polaroidActive = false;
         mapper.HideAnnotationContent();
 
         XRSimpleInteractable interactable = transform.GetChild(0).GetComponentInChildren<XRSimpleInteractable>();

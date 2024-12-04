@@ -343,6 +343,13 @@ public class XrReferences : Singleton<XrReferences>
 
     public bool FacingPins()
     {
-        return Mathf.Abs(xrCamera.transform.rotation.y) < 0.5f;
+        float angle = Mathf.Abs(xrCamera.transform.eulerAngles.y);
+        return angle < 30 || angle > 330;
+    }
+
+    public bool FacingVideos()
+    {
+        float angle = Mathf.Abs(xrCamera.transform.eulerAngles.y);
+        return angle % 360 < 270 && angle % 360 > 90;
     }
 }

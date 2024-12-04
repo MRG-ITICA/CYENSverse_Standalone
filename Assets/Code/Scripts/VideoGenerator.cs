@@ -218,30 +218,12 @@ public class VideoGenerator : MonoBehaviour
     // Fade out and disable videos of other categories and fade in and enable videos of current category
     public void ResetVideos()
     {
-        LeanTween.cancelAll();
-
         for (int i = 0, n = allVideos.Count; i < n; i++)
         {
             var videoController = allVideos[i];
-            // Stop any video playback and reset visuals
-            videoController.StopVideo();
-            videoController.DisableCloseButton();
-            videoController.ResetPosition();
 
-            // Toggle video/interaction state based on category
-            if (videoController.IsOfCategory(categoryManager.currentCategoryIndex))
-            {
-                videoController.Activate();
-                videoController.FadeInVideo();
-            }
-            else
-            {
-                videoController.Deactivate();
-                videoController.FadeOutVideo();
-                videoController.UnloadAsset();
-            }
+            videoController.Activate();
+            videoController.FadeInVideo();
         }
-
-        //rotator.SetActive(true);
     }
 }

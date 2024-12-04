@@ -423,10 +423,19 @@ public class VideoController : MonoBehaviour
         FocusPlayVideo();
     }
 
+    private IEnumerator ShowCloseContentInstruction()
+    {
+        yield return new WaitForSeconds(8);
+        if (videoPlayer.isPlaying)
+        {
+            PopUpController popUpController = FindObjectOfType<PopUpController>();
+            popUpController.ShowInstructionWithRayAnimation(popUpController.closeContentInstruction, 0, 4);
+        }
+    }
+
     // Called when the video is selected through the interactor
     public void FocusPlayVideo()
     {
-        FindObjectOfType<PopUpController>().selectedVideo = true;
         if (videoPlayer.isPlaying)
         {
             return;
@@ -455,6 +464,13 @@ public class VideoController : MonoBehaviour
         LeanTween.scale(gameObject, newScale, 2f).setOnComplete(EnableVideo);
 
         OnVideoSelected?.Invoke(this);
+
+        PopUpController popUpController = FindObjectOfType<PopUpController>();
+        if (!popUpController.selectedVideo)
+        {
+            StartCoroutine(ShowCloseContentInstruction());
+            popUpController.selectedVideo = true;
+        }
     }
 
     private void OnVideoFinished(VideoPlayer source)
@@ -483,7 +499,7 @@ public class VideoController : MonoBehaviour
     public void CloseVideo()
     {
         LeanTween.move(gameObject, initialPosition, 1f);
-        LeanTween.scale(gameObject, initialImageScale, 1f);//.setOnComplete(videoGenerator.ResetVideos);
+        LeanTween.scale(gameObject, initialImageScale, 1f).setOnComplete(videoGenerator.ResetVideos);
 
         frame.sprite = viewedFrame;
         SetToPreviewScreen();

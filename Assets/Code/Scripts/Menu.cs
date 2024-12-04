@@ -83,7 +83,7 @@ public class Menu : MonoBehaviour
         gameObject.SetActive(true);
         RenderSettings.skybox = categorySkybox;
         skyboxPlayer.clip = menuSkyboxVideo;
-        popUpController.ShowInstructionWithRayAnimation(popUpController.introductionInstructions[1]);
+        popUpController.ShowInstructionWithRayAnimation(popUpController.introductionInstructions[1], 0.5f, 7);
     }
 
     #endregion Unity Messages
@@ -116,6 +116,7 @@ public class Menu : MonoBehaviour
     {
         loadingEffect.Show();
         loadingEffect.Load();
+        StartCoroutine(FindObjectOfType<PopUpController>().FadeOutPopUp());
         yield return new WaitUntil(() => !loadingEffect.IsLoading());
         loadingEffect.Hide();
         LoadCyensVerse();
@@ -130,7 +131,6 @@ public class Menu : MonoBehaviour
 
     public void LoadCyensVerse()
     {
-        StartCoroutine(FindObjectOfType<PopUpController>().FadeOutPopUp());
         fader.LoadMainScene(true, 0.5f, 3f);
     }
 

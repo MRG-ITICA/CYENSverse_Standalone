@@ -64,6 +64,11 @@ public class ContentController : MonoBehaviour
     [SerializeField]
     private Material viewedMaterial;
 
+    public bool openedPolaroidBefore = false;
+    public bool in360 = false;
+
+    private float time = 0;
+
     void Awake()
     {
         XrReferences.Instance.ChangeRayCastCullingMask(uiInteractionCullingMask);
@@ -78,6 +83,22 @@ public class ContentController : MonoBehaviour
 
         credits.OnCreditsSequenceFinished += RestartExperience;
         wordCloud.OnFutureSequenceEnded += ShowCredits;
+    }
+    private void Update()
+    {
+        if (in360)
+        {
+            time += Time.deltaTime;
+            if (time >= 45)
+            {
+                PopUpController popUpController = FindObjectOfType<PopUpController>();
+                popUpController.ShowInstructionWithRayAnimation(popUpController.exit360Instruction, 0, 6);
+                time = 0;
+            }
+        } else
+        {
+            time = 0;
+        }
     }
 
     private void OnDisable()
@@ -97,8 +118,19 @@ public class ContentController : MonoBehaviour
         enteringImage = status;
     }
 
+    public void OpenedPolaroid()
+    {
+        openedPolaroidBefore = true;
+    }
+
     public void EnteringImage(IImageController pinImageController)
     {
+        if (!openedPolaroidBefore)
+        {
+            PopUpController popUpController = FindObjectOfType<PopUpController>();
+            popUpController.ShowInstructionWithRayAnimation(popUpController.openPolaroidInstruction, 4, 6);
+        }
+
         Debug.Log("entering image");
         SetFloor360Mode(true);
 
@@ -124,7 +156,7 @@ public class ContentController : MonoBehaviour
             {
                 child.gameObject.layer = 0;
             }
-            floor.transform.localScale = floor.transform.localScale / 6;
+            floor.transform.localScale = floor.transform.localScale / 8;
         } else
         {
             border.SetActive(false);
@@ -135,10 +167,6 @@ public class ContentController : MonoBehaviour
 
     public void SetSkyboxFromPinTexture(IImageController source, Texture skyboxTexture, IImageController parent)
     {
-        Debug.Log("set skybox");
-        Debug.Log("source :" + source.Name);
-        Debug.Log(skyboxTexture.name);
-
         source.OnTextureLoadedCallback.UnregisterListener(SetSkyboxFromPinTexture);
 
         annotationController.LoadAnnotations(source, skyboxTexture, parent);
@@ -150,6 +178,7 @@ public class ContentController : MonoBehaviour
         MarkPinAsViewed(material);
 
         SetEnteringImageStatus(false);
+        in360 = true;
     }
 
     private void MarkPinAsViewed(Material material)
@@ -166,6 +195,7 @@ public class ContentController : MonoBehaviour
 
     public void ExitingImageToHome()
     {
+        in360 = false;
         SetFloor360Mode(false);
         enteringImage = false;
         ClearAnnotations();
