@@ -69,7 +69,7 @@ public class PopUpController : MonoBehaviour
     void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
-        ShowInstructionWithRayAnimation(introductionInstructions[0], 2f, 6);
+        ShowInstructionWithRayAnimation(introductionInstructions[0], 4, 6);
         contentController = FindObjectOfType<ContentController>();
         xrReferences = FindObjectOfType<XrReferences>();
     }
@@ -115,7 +115,7 @@ public class PopUpController : MonoBehaviour
             bool facingVideos = xrReferences.FacingVideos();
             if (!selectedVideo && facingVideos)
             {
-                ShowInstructionWithRayAnimation(videoInstruction, 0, 6);
+                ShowInstructionWithRayAnimation(videoInstruction, 1, 6);
                 timeVideos = 0;
             }
         }

@@ -13,12 +13,13 @@
 // *********************************************
 
 using SourceBase.Utilities.Helpers;
-
+using System.Collections;
 using TriInspector;
 
 using Unity.XR.CoreUtils;
 
 using UnityEngine;
+using UnityEngine.XR;
 using UnityEngine.XR.Hands;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Inputs;
@@ -111,6 +112,7 @@ public class XrReferences : Singleton<XrReferences>
     {
         SetInstance(this, true);
         SetReferences();
+        //StartCoroutine(CheckHeadset());
     }
 
     #endregion Unity Messages
@@ -351,5 +353,24 @@ public class XrReferences : Singleton<XrReferences>
     {
         float angle = Mathf.Abs(xrCamera.transform.eulerAngles.y);
         return angle % 360 < 270 && angle % 360 > 90;
+    }
+
+    private IEnumerator CheckHeadset()
+    {
+        var cooldown = new WaitForSeconds(1f);
+
+        while (true)
+        {
+            InputDevice headDevice = InputDevices.GetDeviceAtXRNode(XRNode.Head);
+            if (headDevice.isValid)
+            {
+                bool userPresent = false;
+                bool presenceFeatureSupported = headDevice.TryGetFeatureValue(CommonUsages.userPresence, out userPresent);
+                Debug.Log("presence feature supported " + presenceFeatureSupported + " userPresent is " + userPresent);
+                //OnHeadsetStatusChanged?.Invoke(userPresent);  <--- custom event to inform others
+            }
+
+            yield return cooldown;
+        }
     }
 }
