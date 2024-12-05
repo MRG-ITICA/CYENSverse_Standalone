@@ -28,6 +28,9 @@ public class PopUpController : MonoBehaviour
 
     [SerializeField]
     public string closeContentInstruction;
+
+    [SerializeField]
+    public string futureWordInstruction;
     #endregion
 
     [SerializeField]
@@ -42,9 +45,7 @@ public class PopUpController : MonoBehaviour
     [SerializeField]
     private Sprite turnAroundImage;
 
-    [SerializeField]
     private float popUpTotalDuration;
-
     private float currentDuration = 0;
 
     private CanvasGroup canvasGroup;
@@ -96,10 +97,10 @@ public class PopUpController : MonoBehaviour
             timePins += Time.deltaTime;
         }
 
+        // Show turn around pop up
         if (time > 20 && !turnAroundShown && !contentController.in360)
         {
             bool facingPins = xrReferences.FacingPins();
-            // Show turn around pop up
             if (!selectedVideo && facingPins)
             {
                 ShowInstructionWithImage(turnAroundInstruction, turnAroundImage, 0, 6);
@@ -107,6 +108,8 @@ public class PopUpController : MonoBehaviour
                 time = 0;
             }
         }
+
+        // Show open video instruction
         if (timeVideos > 20 && !contentController.in360)
         {
             bool facingVideos = xrReferences.FacingVideos();
@@ -116,6 +119,8 @@ public class PopUpController : MonoBehaviour
                 timeVideos = 0;
             }
         }
+
+        // Show open pin instruction
         if (timePins > 20 && !contentController.in360) {
             bool facingPins = xrReferences.FacingPins();
             if (!selectedPin && facingPins)
@@ -126,6 +131,7 @@ public class PopUpController : MonoBehaviour
         }
     }
 
+    // Called after user selects ring to enter main environment
     public void EnteredMainEnvironment()
     {
         entered = true;

@@ -258,6 +258,7 @@ public class WordController : MonoBehaviour
 
     private void WordSelected()
     {
+        FindObjectOfType<WordCloud>().wordSelected = true;
         selected = true;
         text.color = selectedColor;
         // Make selected words glow

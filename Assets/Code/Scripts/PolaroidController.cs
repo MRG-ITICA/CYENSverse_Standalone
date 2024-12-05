@@ -32,7 +32,7 @@ public class PolaroidController : MonoBehaviour
         if (polaroidActive)
         {
             time += Time.deltaTime;
-            if (time >= 20)
+            if (time >= 15)
             {
                 StartCoroutine(LoadHide());
                 time = 0;

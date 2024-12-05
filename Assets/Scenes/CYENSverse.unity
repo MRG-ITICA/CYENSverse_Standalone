@@ -4545,8 +4545,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 532715025}
-  m_LocalRotation: {x: 0.08715578, y: -0, z: -0, w: 0.9961947}
-  m_LocalPosition: {x: 0, y: 0, z: 0.636}
+  m_LocalRotation: {x: 0.08715615, y: -0, z: -0, w: 0.99619466}
+  m_LocalPosition: {x: 0, y: 0, z: 0.62}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4554,10 +4554,10 @@ RectTransform:
   - {fileID: 1221756612}
   - {fileID: 760268769}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 10.000044, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.14, y: 1.356}
+  m_AnchoredPosition: {x: 0.14, y: 1.24}
   m_SizeDelta: {x: 70, y: 29.836}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &532715032
@@ -4582,12 +4582,12 @@ MonoBehaviour:
     virtual space
   openPolaroidInstruction: Extend your arm to aim the ray at a polaroid photo to
     explore further
-  closeContentInstruction: Aim the ray to the X icon to exit
+  closeContentInstruction: Aim the ray to the X icon to close
+  futureWordInstruction: Aim the ray to a word to select it
   handAnimation: {fileID: 760268768}
   instructionVisual: {fileID: 1221756611}
   instructionText: {fileID: 1141695636}
   turnAroundImage: {fileID: 21300000, guid: dd8050ff06d518e4db93d38dd560977d, type: 3}
-  popUpTotalDuration: 6
   selectedVideo: 0
   selectedPin: 0
 --- !u!1773428102 &532715033
@@ -4600,12 +4600,12 @@ ParentConstraint:
   m_Enabled: 1
   serializedVersion: 2
   m_Weight: 1
-  m_TranslationAtRest: {x: 0.14, y: 1.356, z: 0.636}
-  m_RotationAtRest: {x: 10.000011, y: 0, z: 0}
+  m_TranslationAtRest: {x: 0.14, y: 1.24, z: 0.62}
+  m_RotationAtRest: {x: 10.000054, y: 0, z: 0}
   m_TranslationOffsets:
-  - {x: 0.049999997, y: -0.0054399967, z: 0.636}
+  - {x: 0.049999997, y: -0.121439934, z: 0.62}
   m_RotationOffsets:
-  - {x: 10.000013, y: 0, z: 0}
+  - {x: 10.000055, y: 0, z: 0}
   m_AffectTranslationX: 1
   m_AffectTranslationY: 0
   m_AffectTranslationZ: 1

@@ -73,6 +73,8 @@ public class WordCloud : MonoBehaviour
     [SerializeField]
     private ContentController contentController;
 
+    public bool wordSelected = false;
+
     #region Message
 
     [Title("Message")]
@@ -315,6 +317,17 @@ public class WordCloud : MonoBehaviour
 
         // and then start showing the word cloud
         StartCoroutine(CreateWords());
+        StartCoroutine(ShowInstructionPopUp());
+    }
+
+    private IEnumerator ShowInstructionPopUp()
+    {
+        yield return new WaitForSeconds(7);
+        if (!wordSelected)
+        {
+            PopUpController popUpController = FindObjectOfType<PopUpController>();
+            popUpController.ShowInstructionWithRayAnimation(popUpController.futureWordInstruction, 0, 5);
+        }
     }
 
     // Create and position the word objects, fade them in one by one
