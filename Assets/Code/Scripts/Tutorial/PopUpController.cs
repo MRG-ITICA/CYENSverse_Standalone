@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Animations;
+using UnityEngine.Localization.Components;
+using UnityEngine.Localization.Tables;
 using UnityEngine.UI;
 
 public class PopUpController : MonoBehaviour
@@ -12,7 +15,7 @@ public class PopUpController : MonoBehaviour
     public List<string> introductionInstructions;
 
     [SerializeField]
-    private string turnAroundInstruction;
+    public string turnAroundInstruction;
 
     [SerializeField]
     private string pinInstruction;
@@ -43,7 +46,9 @@ public class PopUpController : MonoBehaviour
     private TextMeshProUGUI instructionText;
 
     [SerializeField]
-    private Sprite turnAroundImage;
+    public Sprite turnAroundImage;
+
+    private LocalizeStringEvent localizedString;
 
     private float popUpTotalDuration;
     private float currentDuration = 0;
@@ -69,9 +74,10 @@ public class PopUpController : MonoBehaviour
     void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
-        ShowInstructionWithRayAnimation(introductionInstructions[0], 4, 6);
         contentController = FindObjectOfType<ContentController>();
         xrReferences = FindObjectOfType<XrReferences>();
+        localizedString = GetComponent<LocalizeStringEvent>();
+        StartCoroutine(Introduction());
     }
 
     // Update is called once per frame
@@ -131,6 +137,16 @@ public class PopUpController : MonoBehaviour
         }
     }
 
+    private IEnumerator Introduction()
+    {
+        ShowInstructionWithRayAnimation(introductionInstructions[0], 3, 4);
+        yield return new WaitForSeconds(4);
+        ShowInstructionWithRayAnimation(introductionInstructions[1], 0, 4);
+        yield return new WaitForSeconds(4);
+        FindObjectOfType<LanguageSelection>().FadeIn();
+        ShowInstructionWithRayAnimation(introductionInstructions[2], 0, 4);
+    }
+
     // Called after user selects ring to enter main environment
     public void EnteredMainEnvironment()
     {
@@ -148,6 +164,8 @@ public class PopUpController : MonoBehaviour
 
     public void ShowInstructionWithImage(string text, Sprite sprite, float delay, float duration)
     {
+        localizedString.StringReference.SetReference("Pop Ups", text);
+        localizedString.RefreshString();
         StartCoroutine(FadeOutPopUp());
         SetPopUpDuration(duration);
         StartCoroutine(FadeInPopUp(delay));
@@ -159,6 +177,8 @@ public class PopUpController : MonoBehaviour
 
     public void ShowInstructionWithRayAnimation(string text, float delay, float duration)
     {
+        localizedString.StringReference.SetReference("Pop Ups", text);
+        localizedString.StringReference.RefreshString();
         StartCoroutine(FadeOutPopUp());
         SetPopUpDuration(duration);
         StartCoroutine(FadeInPopUp(delay));

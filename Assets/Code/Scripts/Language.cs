@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Localization.SmartFormat.Core.Parsing;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class AgeRange : MonoBehaviour
+public class Language : MonoBehaviour
 {
     [Title("Word")]
     [SerializeField, ReadOnly]
@@ -31,9 +31,6 @@ public class AgeRange : MonoBehaviour
 
     [SerializeField]
     private Menu menu;
-
-    [SerializeField]
-    private string ageRange;
 
     // Start is called before the first frame update
     void Start()
@@ -78,14 +75,14 @@ public class AgeRange : MonoBehaviour
 
         loadingEffect.Hide();
         interactable.hoverExited.RemoveAllListeners();
-        SaveAge();
+        SaveLanguage();
         tutorial.SetActive(false);
         menu.Show();
     }
 
-    private void SaveAge()
+    private void SaveLanguage()
     {
-        PlayerPrefs.SetString("ageRange", ageRange);
+
     }
 
     private void ScaleDown()

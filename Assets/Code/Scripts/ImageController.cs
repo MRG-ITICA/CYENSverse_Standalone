@@ -199,7 +199,12 @@ public class ImageController : MonoBehaviour, IImageController
 
     public IEnumerator ObjectSelected()
     {
-        FindObjectOfType<PopUpController>().selectedPin = true;
+        PopUpController popUpController = FindObjectOfType<PopUpController>();
+        if (!popUpController.selectedPin)
+        {
+            popUpController.ShowInstructionWithImage(popUpController.turnAroundInstruction, popUpController.turnAroundImage, 3, 4);
+        }
+        popUpController.selectedPin = true;
         Debug.Log("select");
         yield return new WaitForSeconds(1);
         //categoryManager.in360Image = true;

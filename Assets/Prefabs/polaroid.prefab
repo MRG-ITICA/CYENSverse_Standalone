@@ -636,6 +636,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.72
       objectReference: {fileID: 0}
+    - target: {fileID: 656160141836415580, guid: 0704114ae6550324088fc5543527284b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.085
+      objectReference: {fileID: 0}
     - target: {fileID: 1039034157735794323, guid: 0704114ae6550324088fc5543527284b,
         type: 3}
       propertyPath: m_Layer
@@ -719,12 +724,12 @@ PrefabInstance:
     - target: {fileID: 2251999747709705596, guid: 0704114ae6550324088fc5543527284b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.605
+      value: -0.592
       objectReference: {fileID: 0}
     - target: {fileID: 2251999747709705596, guid: 0704114ae6550324088fc5543527284b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 17.6
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 2251999747709705596, guid: 0704114ae6550324088fc5543527284b,
         type: 3}
@@ -935,6 +940,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PokeConfiguration.m_ConstantValue.m_InteractionDepthOffset
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 9028179146538046933, guid: 0704114ae6550324088fc5543527284b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.08500004
       objectReference: {fileID: 0}
     - target: {fileID: 9028179146538046933, guid: 0704114ae6550324088fc5543527284b,
         type: 3}
