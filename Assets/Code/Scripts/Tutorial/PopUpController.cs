@@ -11,7 +11,7 @@ using UnityEngine.UI;
 public class PopUpController : MonoBehaviour
 {
     #region Instruction Texts
-    [SerializeField]
+    [SerializeField, TextArea]
     public List<string> introductionInstructions;
 
     [SerializeField]
@@ -43,7 +43,7 @@ public class PopUpController : MonoBehaviour
     private GameObject instructionVisual;
 
     [SerializeField]
-    private TextMeshProUGUI instructionText;
+    public TextMeshProUGUI instructionText;
 
     [SerializeField]
     public Sprite turnAroundImage;
@@ -140,11 +140,11 @@ public class PopUpController : MonoBehaviour
     private IEnumerator Introduction()
     {
         ShowInstructionWithRayAnimation(introductionInstructions[0], 3, 4);
-        yield return new WaitForSeconds(4);
-        ShowInstructionWithRayAnimation(introductionInstructions[1], 0, 4);
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(7);
+        ShowInstructionWithRayAnimation(introductionInstructions[1], 2, 3);
+        yield return new WaitForSeconds(5);
         FindObjectOfType<LanguageSelection>().FadeIn();
-        ShowInstructionWithRayAnimation(introductionInstructions[2], 0, 4);
+        ShowInstructionWithRayAnimation(introductionInstructions[2], 1, 5);
     }
 
     // Called after user selects ring to enter main environment
@@ -164,12 +164,9 @@ public class PopUpController : MonoBehaviour
 
     public void ShowInstructionWithImage(string text, Sprite sprite, float delay, float duration)
     {
-        localizedString.StringReference.SetReference("Pop Ups", text);
-        localizedString.RefreshString();
         StartCoroutine(FadeOutPopUp());
         SetPopUpDuration(duration);
-        StartCoroutine(FadeInPopUp(delay));
-        instructionText.text = text;
+        StartCoroutine(FadeInPopUp(delay, text));
         instructionVisual.SetActive(true);
         handAnimation.SetActive(false);
         instructionVisual.GetComponent<Image>().sprite = sprite;
@@ -177,14 +174,18 @@ public class PopUpController : MonoBehaviour
 
     public void ShowInstructionWithRayAnimation(string text, float delay, float duration)
     {
-        localizedString.StringReference.SetReference("Pop Ups", text);
-        localizedString.StringReference.RefreshString();
         StartCoroutine(FadeOutPopUp());
         SetPopUpDuration(duration);
-        StartCoroutine(FadeInPopUp(delay));
-        instructionText.text = text;
+        StartCoroutine(FadeInPopUp(delay, text));
         instructionVisual.SetActive(false);
         StartCoroutine(ActivateHandAnimation(delay));
+    }
+
+    public IEnumerator PopUps360()
+    {
+        ShowInstructionWithImage(turnAroundInstruction, turnAroundImage, 2, 3);
+        yield return new WaitForSeconds(6);
+        ShowInstructionWithRayAnimation(openPolaroidInstruction, 1, 6);
     }
     
     private IEnumerator ActivateHandAnimation(float delay)
@@ -193,9 +194,13 @@ public class PopUpController : MonoBehaviour
         handAnimation.SetActive(true);
     }
 
-    private IEnumerator FadeInPopUp(float delay)
+    private IEnumerator FadeInPopUp(float delay, string text)
     {
         yield return new WaitForSeconds(delay);
+
+        localizedString.StringReference.TableEntryReference = text;
+        localizedString.StringReference.RefreshString();
+
         canvasGroup.alpha = 0;
         GetComponent<ParentConstraint>().constraintActive = true;
         currentDuration = 0;

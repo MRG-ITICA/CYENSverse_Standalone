@@ -24,8 +24,14 @@ public class SpinnerController : MonoBehaviour
     private int elementCount;
     private float singleDuration;
     private int counter = 0;
-    private readonly Color fadeOutColor = new Color(.3f, .3f, .3f);
+    //private readonly Color fadeOutColor = new Color(.3f, .3f, .3f);
     private bool loadingStatus = false;
+
+    [SerializeField]
+    private Color loadingColor;
+
+    [SerializeField]
+    private Color fadeOutColor;
 
     public AudioSource audioSource;
 
@@ -79,7 +85,7 @@ public class SpinnerController : MonoBehaviour
         counter = 0;
         while (counter < elementCount)
         {
-            spinnerElements[counter].color = Color.white;
+            spinnerElements[counter].color = loadingColor;
             counter++;
             yield return waitTime;
         }

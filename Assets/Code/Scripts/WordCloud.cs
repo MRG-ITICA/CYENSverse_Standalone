@@ -20,6 +20,7 @@ using TMPro;
 using TriInspector;
 
 using UnityEngine;
+using UnityEngine.Localization.Components;
 using UnityEngine.Serialization;
 
 public class WordCloud : MonoBehaviour
@@ -388,6 +389,8 @@ public class WordCloud : MonoBehaviour
         // wait a bit for words to fade out
         yield return new WaitForSeconds(2f);
 
+        LocalizeStringEvent localization = GetComponent<LocalizeStringEvent>();
+        localization.StringReference.TableEntryReference = "Shared";
         // Show message about all users' selections
         yield return StartCoroutine(ShowMessage(allUserSelectionText, messagesDuration));
 

@@ -125,12 +125,6 @@ public class ContentController : MonoBehaviour
 
     public void EnteringImage(IImageController pinImageController)
     {
-        if (!openedPolaroidBefore)
-        {
-            PopUpController popUpController = FindObjectOfType<PopUpController>();
-            popUpController.ShowInstructionWithRayAnimation(popUpController.openPolaroidInstruction, 4, 6);
-        }
-
         Debug.Log("entering image");
         SetFloor360Mode(true);
 
@@ -144,6 +138,12 @@ public class ContentController : MonoBehaviour
         // Change skybox to selected 360 image
         pinImageController.OnTextureLoadedCallback.RegisterListener(SetSkyboxFromPinTexture);
         //Debug.Log($"Added listener to load skybox texture");
+
+        if (!openedPolaroidBefore)
+        {
+            PopUpController popUpController = FindObjectOfType<PopUpController>();
+            StartCoroutine(popUpController.PopUps360());
+        }
     }
 
     public void SetFloor360Mode(bool active)

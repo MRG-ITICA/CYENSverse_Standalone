@@ -1,0 +1,298 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: PopUps_tr
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: tr
+  m_SharedData: {fileID: 11400000, guid: c0db169e17eb29c42b6c381aa90c2034, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1170199171072
+    m_Localized: "\u0130\xE7eri\u011Fi kapatmak i\xE7in \u0131\u015F\u0131n\u0131
+      X simgesine y\xF6nelt"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1068957061120
+    m_Localized: "Sanal alana geri d\xF6nmek i\xE7in \u0131\u015F\u0131n\u0131 halkaya
+      y\xF6nelt"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1220312715264
+    m_Localized: "Bir kelimeyi se\xE7mek i\xE7in \u0131\u015F\u0131n\u0131 ona y\xF6nelt"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 995946811392
+    m_Localized: "I\u015F\u0131n\u0131 turuncu raptiyeye y\xF6nelt"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1133670977536
+    m_Localized: "Polaroid foto\u011Fraf\u0131 g\xF6r\xFCnt\xFClemek i\xE7in \u0131\u015F\u0131n\u0131
+      ona y\xF6nelt"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12885839872
+    m_Localized: "Arkana d\xF6n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1031619366912
+    m_Localized: "Bir video k\xFC\xE7\xFCk resmine \u0131\u015F\u0131n\u0131 y\xF6nelt"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 962048810962944
+    m_Localized: "Girmek i\xE7in \u0131\u015F\u0131n\u0131 halkaya y\xF6nelt"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 980165490528256
+    m_Localized: "Elini kald\u0131r ve avucunu a\xE7\u0131k tut"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 980228115681280
+    m_Localized: "Avucundan \xE7\u0131kan \u0131\u015F\u0131n\u0131 fark et"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 980258578911232
+    m_Localized: "Dilini se\xE7mek i\xE7in \u0131\u015F\u0131n\u0131 y\xF6nelt"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 983555331215360
+    m_Localized: "Girmek i\xE7in se\xE7"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237139369984
+    m_Localized: "Se\xE7 gelece\u011Fi tan\u0131mlayan kelimeler gelecek Tampon B\xF6lge\u2019nin"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237143564291
+    m_Localized: "Ortak bir gelecek\ncrafted by everyone,\nherkes i\xE7in..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237143564294
+    m_Localized: "geli\u015Fim"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237143564295
+    m_Localized: prototip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237143564296
+    m_Localized: "s\u0131n\u0131r yok"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758592
+    m_Localized: "miras alan\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758593
+    m_Localized: "m\xFCze"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758594
+    m_Localized: "a\xE7\u0131k yollar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758595
+    m_Localized: "do\u011Fa"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758596
+    m_Localized: sil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758597
+    m_Localized: "\xE7\xF6z\xFClme"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758598
+    m_Localized: "halk\u0131n vizyonu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758599
+    m_Localized: "yeniden birle\u015Fmi\u015F Lefko\u015Fa"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758600
+    m_Localized: asker yok
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758601
+    m_Localized: "vah\u015Fi ya\u015Fam"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758602
+    m_Localized: hayvanlar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758603
+    m_Localized: milli park
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758604
+    m_Localized: "b\xF6l\xFCnmenin izleri"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758605
+    m_Localized: "herkes i\xE7in bir yer"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758606
+    m_Localized: "yeniden yerle\u015Fim"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758607
+    m_Localized: geri kazan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758608
+    m_Localized: "yeniden i\u015Fgal et"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758609
+    m_Localized: "fiziksel s\u0131n\u0131r yok"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758610
+    m_Localized: ticaret caddeleri
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758611
+    m_Localized: koruma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758612
+    m_Localized: mimari koruma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758613
+    m_Localized: mimari restorasyon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758614
+    m_Localized: "konu\u015Fma alan\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758615
+    m_Localized: "gen\xE7 insanlar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758616
+    m_Localized: "birle\u015Fik topluluklar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758617
+    m_Localized: "sanat\xE7\u0131lar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758618
+    m_Localized: etkinlikler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758619
+    m_Localized: sergiler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758620
+    m_Localized: pazarlar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758621
+    m_Localized: "s\u0131n\u0131rlar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758622
+    m_Localized: "canl\u0131 alan"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758623
+    m_Localized: "\xF6l\xFC alan"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758624
+    m_Localized: zamanda geri
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758625
+    m_Localized: "a\xE7\u0131k"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758626
+    m_Localized: "canland\u0131rma"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758627
+    m_Localized: ortak alanlar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758628
+    m_Localized: "yay\u0131lmak"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758629
+    m_Localized: "a\xE7\u0131k kontrol noktalar\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758630
+    m_Localized: "do\u011Fa koruma alan\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758631
+    m_Localized: "binalar\u0131 yeniden hayal et"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758632
+    m_Localized: "kal\u0131nt\u0131lar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758633
+    m_Localized: "an\u0131 park\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758634
+    m_Localized: "ye\u015Fil b\xF6lge"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758635
+    m_Localized: "yo\u011Fun"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758636
+    m_Localized: "ba\u011Flant\u0131lar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758637
+    m_Localized: "bah\xE7eler"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758638
+    m_Localized: spor tesisleri
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758639
+    m_Localized: "oldu\u011Fu gibi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758640
+    m_Localized: "do\u011Fa ele ge\xE7iriyor"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758641
+    m_Localized: "Konu\u015Fmac\u0131lar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1023486762045440
+    m_Localized: "T\xFCrk\xE7e"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

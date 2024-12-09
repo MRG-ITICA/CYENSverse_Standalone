@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: 4993109f8c777314f98e41114fefe367
   m_SerializeEntries:
   - m_GUID: a5ef36ca2ebb10540bcbd8f2f83d0296
-    m_Address: Pop Ups_en
+    m_Address: PopUps_en
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en

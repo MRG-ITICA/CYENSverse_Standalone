@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using TriInspector;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Localization.Components;
 using UnityEngine.Localization.SmartFormat.Core.Parsing;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -78,6 +80,9 @@ public class Language : MonoBehaviour
         SaveLanguage();
         tutorial.SetActive(false);
         menu.Show();
+
+        PopUpController popUpController = FindObjectOfType<PopUpController>();
+        popUpController.ShowInstructionWithRayAnimation(popUpController.introductionInstructions[3], 2, 6);
     }
 
     private void SaveLanguage()

@@ -19,6 +19,7 @@ using TMPro;
 using TriInspector;
 
 using UnityEngine;
+using UnityEngine.Localization.Components;
 using UnityEngine.XR.Interaction.Toolkit;
 
 [RequireComponent(typeof(XRSimpleInteractable))]
@@ -120,10 +121,12 @@ public class WordController : MonoBehaviour
 
     public void SetData(WordData dataValue)
     {
+        LocalizeStringEvent localisation = GetComponent<LocalizeStringEvent>();
+        localisation.StringReference.TableEntryReference = dataValue.word;
         data = dataValue;
         data.SetController(this);
 
-        text.text = data.word;
+        //text.text = data.word;
 
         StartCoroutine(SetTextColliderSize());
     }

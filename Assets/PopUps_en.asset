@@ -1,0 +1,307 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: PopUps_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: c0db169e17eb29c42b6c381aa90c2034, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 12885839872
+    m_Localized: 'Turn around '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 995946811392
+    m_Localized: Aim the ray at an orange pin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1031619366912
+    m_Localized: Aim the ray at a video thumbnail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1068957061120
+    m_Localized: Aim the ray at the ring to go back to the virtual space
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1133670977536
+    m_Localized: Aim the ray at a polaroid photo to view it
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1170199171072
+    m_Localized: Aim the ray at the X icon to close the content
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1220312715264
+    m_Localized: Aim the ray at a word to select it
+    m_Metadata:
+      m_Items: []
+  - m_Id: 962048810962944
+    m_Localized: Aim the ray at the ring to enter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 980165490528256
+    m_Localized: "Raise your hand and keep your palm open\n\n\u03A3\u03AE\u03BA\u03C9\u03C3\u03B5
+      \u03C4\u03BF \u03C7\u03AD\u03C1\u03B9 \u03C3\u03BF\u03C5 \u03BC\u03B5 \u03B1\u03BD\u03BF\u03B9\u03C7\u03C4\u03AE
+      \u03C4\u03B7\u03BD \u03C0\u03B1\u03BB\u03AC\u03BC\u03B7"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 980228115681280
+    m_Localized: "Notice the ray coming out of your palm \n\n\u0394\u03B5\u03C2 \u03C4\u03B7\u03BD
+      \u03B1\u03BA\u03C4\u03AF\u03BD\u03B1 \u03C0\u03BF\u03C5 \u03B2\u03B3\u03B1\u03AF\u03BD\u03B5\u03B9
+      \u03B1\u03C0\u03CC \u03C4\u03B7\u03BD \u03C0\u03B1\u03BB\u03AC\u03BC\u03B7
+      \u03C3\u03BF\u03C5"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 980258578911232
+    m_Localized: "Aim the ray to select your language\n\n\u03A3\u03B7\u03BC\u03AC\u03B4\u03B5\u03C8\u03B5
+      \u03BC\u03B5 \u03C4\u03B7\u03BD \u03B1\u03BA\u03C4\u03AF\u03BD\u03B1 \u03B3\u03B9\u03B1
+      \u03BD\u03B1 \u03B5\u03C0\u03B9\u03BB\u03AD\u03BE\u03B5\u03B9\u03C2 \u03B3\u03BB\u03CE\u03C3\u03C3\u03B1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 983555331215360
+    m_Localized: Select to enter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237139369984
+    m_Localized: <u>Select</u> words that describe how you imagine the <u>future</u>
+      of the Buffer Zone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237143564291
+    m_Localized: 'A shared future
+
+      crafted by everyone,
+
+      for everyone...'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237143564294
+    m_Localized: development
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237143564295
+    m_Localized: prototype
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237143564296
+    m_Localized: no borders
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758592
+    m_Localized: heritage site
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758593
+    m_Localized: museum
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758594
+    m_Localized: open roads
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758595
+    m_Localized: nature
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758596
+    m_Localized: erase
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758597
+    m_Localized: dissolve
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758598
+    m_Localized: people's vision
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758599
+    m_Localized: reunited Nicosia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758600
+    m_Localized: no soldiers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758601
+    m_Localized: wildlife
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758602
+    m_Localized: animals
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758603
+    m_Localized: national park
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758604
+    m_Localized: traces of division
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758605
+    m_Localized: a place for everybody
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758606
+    m_Localized: repopulate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758607
+    m_Localized: reclaim
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758608
+    m_Localized: reoccupy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758609
+    m_Localized: no physical borders
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758610
+    m_Localized: commercial streets
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758611
+    m_Localized: conservation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758612
+    m_Localized: architectural perservation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758613
+    m_Localized: architectural restoration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758614
+    m_Localized: space of conversation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758615
+    m_Localized: young people
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758616
+    m_Localized: united communities
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758617
+    m_Localized: artists
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758618
+    m_Localized: activities
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758619
+    m_Localized: exhibitions
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758620
+    m_Localized: markets
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758621
+    m_Localized: borders
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758622
+    m_Localized: lively space
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758623
+    m_Localized: dead space
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758624
+    m_Localized: back in time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758625
+    m_Localized: open
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758626
+    m_Localized: revitalisation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758627
+    m_Localized: common grounds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758628
+    m_Localized: spread around
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758629
+    m_Localized: open checkpoints
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758630
+    m_Localized: nature reserve
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758631
+    m_Localized: reimagine the buildings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758632
+    m_Localized: ruins
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758633
+    m_Localized: memory park
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758634
+    m_Localized: green zone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758635
+    m_Localized: dense
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758636
+    m_Localized: connections
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758637
+    m_Localized: gardens
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758638
+    m_Localized: sports facilities
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758639
+    m_Localized: as it is
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758640
+    m_Localized: nature takes over
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1019237147758641
+    m_Localized: Speakers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1023486762045440
+    m_Localized: English
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

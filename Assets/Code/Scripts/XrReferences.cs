@@ -112,7 +112,7 @@ public class XrReferences : Singleton<XrReferences>
     {
         SetInstance(this, true);
         SetReferences();
-        //StartCoroutine(CheckHeadset());
+        StartCoroutine(CheckHeadset());
     }
 
     #endregion Unity Messages

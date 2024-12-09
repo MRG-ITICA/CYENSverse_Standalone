@@ -939,6 +939,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 482117856037844994, guid: 4396a831358f4fe49bb64502f4535264,
+        type: 3}
+      propertyPath: fadeOutColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 482117856037844994, guid: 4396a831358f4fe49bb64502f4535264,
+        type: 3}
+      propertyPath: fadeOutColor.b
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 482117856037844994, guid: 4396a831358f4fe49bb64502f4535264,
+        type: 3}
+      propertyPath: fadeOutColor.g
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 482117856037844994, guid: 4396a831358f4fe49bb64502f4535264,
+        type: 3}
+      propertyPath: fadeOutColor.r
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 482117856037844994, guid: 4396a831358f4fe49bb64502f4535264,
+        type: 3}
+      propertyPath: loadingColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 482117856037844994, guid: 4396a831358f4fe49bb64502f4535264,
+        type: 3}
+      propertyPath: loadingColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 482117856037844994, guid: 4396a831358f4fe49bb64502f4535264,
+        type: 3}
+      propertyPath: loadingColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 482117856037844994, guid: 4396a831358f4fe49bb64502f4535264,
+        type: 3}
+      propertyPath: loadingColor.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -946,7 +986,8 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 4396a831358f4fe49bb64502f4535264, type: 3}
 --- !u!114 &5378043498781972831 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 482117856037844994, guid: 4396a831358f4fe49bb64502f4535264, type: 3}
+  m_CorrespondingSourceObject: {fileID: 482117856037844994, guid: 4396a831358f4fe49bb64502f4535264,
+    type: 3}
   m_PrefabInstance: {fileID: 5481573111721468253}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -957,6 +998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!224 &5481573111732661573 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 22400024, guid: 4396a831358f4fe49bb64502f4535264, type: 3}
+  m_CorrespondingSourceObject: {fileID: 22400024, guid: 4396a831358f4fe49bb64502f4535264,
+    type: 3}
   m_PrefabInstance: {fileID: 5481573111721468253}
   m_PrefabAsset: {fileID: 0}
