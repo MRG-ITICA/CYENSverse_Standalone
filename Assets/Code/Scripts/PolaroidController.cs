@@ -83,11 +83,11 @@ public class PolaroidController : MonoBehaviour
 
     private IEnumerator ShowCloseContentInstruction()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(4);
         if (polaroidActive)
         {
             PopUpController popUpController = FindObjectOfType<PopUpController>();
-            popUpController.ShowInstructionWithRayAnimation(popUpController.closeContentInstruction, 0, 4);
+            popUpController.ShowInstructionWithRayAnimation(popUpController.closeContentInstruction, 1, 4);
         }
     }
     public void CloseButtonHoverExited()

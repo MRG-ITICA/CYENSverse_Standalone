@@ -92,7 +92,7 @@ public class ContentController : MonoBehaviour
             if (time >= 45)
             {
                 PopUpController popUpController = FindObjectOfType<PopUpController>();
-                popUpController.ShowInstructionWithRayAnimation(popUpController.exit360Instruction, 0, 6);
+                popUpController.ShowInstructionWithRayAnimation(popUpController.exit360Instruction, 1, 6);
                 time = 0;
             }
         } else
@@ -139,7 +139,7 @@ public class ContentController : MonoBehaviour
         pinImageController.OnTextureLoadedCallback.RegisterListener(SetSkyboxFromPinTexture);
         //Debug.Log($"Added listener to load skybox texture");
 
-        if (!openedPolaroidBefore)
+        if (!openedPolaroidBefore && in360)
         {
             PopUpController popUpController = FindObjectOfType<PopUpController>();
             StartCoroutine(popUpController.PopUps360());

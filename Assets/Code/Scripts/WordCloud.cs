@@ -224,10 +224,10 @@ public class WordCloud : MonoBehaviour
 
         messageCanvas.alpha = 0;
 
-        foreach (TMP_Text m in messageLabels)
+        /*foreach (TMP_Text m in messageLabels)
         {
             m.text = message;
-        }
+        }*/
         
         var waitTime = new WaitForFixedUpdate();
         var alphaDeltaProgress = Time.fixedDeltaTime * 2;
@@ -265,10 +265,10 @@ public class WordCloud : MonoBehaviour
     private void HideMessage()
     {
         messageCanvas.alpha = 0;
-        foreach (TMP_Text m in messageLabels)
+        /*foreach (TMP_Text m in messageLabels)
         {
             m.text = String.Empty;
-        }
+        }*/
     }
 
     #region Transform Manipulation
@@ -391,6 +391,7 @@ public class WordCloud : MonoBehaviour
 
         LocalizeStringEvent localization = GetComponent<LocalizeStringEvent>();
         localization.StringReference.TableEntryReference = "Shared";
+        localization.StringReference.RefreshString();
         // Show message about all users' selections
         yield return StartCoroutine(ShowMessage(allUserSelectionText, messagesDuration));
 

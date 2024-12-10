@@ -82,7 +82,7 @@ public class Language : MonoBehaviour
         menu.Show();
 
         PopUpController popUpController = FindObjectOfType<PopUpController>();
-        popUpController.ShowInstructionWithRayAnimation(popUpController.introductionInstructions[3], 2, 6);
+        popUpController.ShowInstructionWithRayAnimation(popUpController.introductionInstructions[3], 2, 5);
     }
 
     private void SaveLanguage()

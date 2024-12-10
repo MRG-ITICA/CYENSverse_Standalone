@@ -425,12 +425,12 @@ public class VideoController : MonoBehaviour
 
     private IEnumerator ShowCloseContentInstruction()
     {
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(7);
         ContentController contentController = FindObjectOfType<ContentController>();
         if (videoPlayer.isPlaying && !contentController.in360)
         {
             PopUpController popUpController = FindObjectOfType<PopUpController>();
-            popUpController.ShowInstructionWithRayAnimation(popUpController.closeContentInstruction, 0, 4);
+            popUpController.ShowInstructionWithRayAnimation(popUpController.closeContentInstruction, 1, 4);
         }
     }
 

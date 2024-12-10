@@ -141,8 +141,8 @@ public class PopUpController : MonoBehaviour
     {
         ShowInstructionWithRayAnimation(introductionInstructions[0], 3, 4);
         yield return new WaitForSeconds(7);
-        ShowInstructionWithRayAnimation(introductionInstructions[1], 2, 3);
-        yield return new WaitForSeconds(5);
+        ShowInstructionWithRayAnimation(introductionInstructions[1], 1, 3);
+        yield return new WaitForSeconds(4);
         FindObjectOfType<LanguageSelection>().FadeIn();
         ShowInstructionWithRayAnimation(introductionInstructions[2], 1, 5);
     }

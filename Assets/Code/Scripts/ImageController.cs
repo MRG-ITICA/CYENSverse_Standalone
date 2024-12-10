@@ -200,10 +200,10 @@ public class ImageController : MonoBehaviour, IImageController
     public IEnumerator ObjectSelected()
     {
         PopUpController popUpController = FindObjectOfType<PopUpController>();
-        if (!popUpController.selectedPin)
+        /*if (!popUpController.selectedPin)
         {
             popUpController.ShowInstructionWithImage(popUpController.turnAroundInstruction, popUpController.turnAroundImage, 3, 4);
-        }
+        }*/
         popUpController.selectedPin = true;
         Debug.Log("select");
         yield return new WaitForSeconds(1);

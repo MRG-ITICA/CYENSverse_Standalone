@@ -83,7 +83,6 @@ public class Menu : MonoBehaviour
         gameObject.SetActive(true);
         RenderSettings.skybox = categorySkybox;
         skyboxPlayer.clip = menuSkyboxVideo;
-        popUpController.ShowInstructionWithRayAnimation(popUpController.introductionInstructions[1], 0.5f, 7);
     }
 
     #endregion Unity Messages

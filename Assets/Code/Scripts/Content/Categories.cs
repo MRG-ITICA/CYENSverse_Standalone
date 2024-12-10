@@ -468,6 +468,8 @@ public class Categories : Singleton<Categories>
 
     private void Clear360Data()
     {
+        ContentController contentController = FindObjectOfType<ContentController>();
+        contentController.in360 = false;
         coordinatesMapper.ClearAndDestroyAnnotations();
         coordinatesMapper.HideHomeButton();
     }
