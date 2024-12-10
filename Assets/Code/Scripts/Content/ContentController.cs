@@ -89,7 +89,7 @@ public class ContentController : MonoBehaviour
         if (in360)
         {
             time += Time.deltaTime;
-            if (time >= 45)
+            if (time >= 30)
             {
                 PopUpController popUpController = FindObjectOfType<PopUpController>();
                 popUpController.ShowInstructionWithRayAnimation(popUpController.exit360Instruction, 1, 6);
@@ -156,7 +156,7 @@ public class ContentController : MonoBehaviour
             {
                 child.gameObject.layer = 0;
             }
-            floor.transform.localScale = floor.transform.localScale / 8;
+            floor.transform.localScale = new Vector3(0.16f, 0.16f, 0.16f);
         } else
         {
             border.SetActive(false);

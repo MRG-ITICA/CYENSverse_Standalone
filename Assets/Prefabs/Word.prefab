@@ -266,8 +266,8 @@ MonoBehaviour:
   loadingEffect: {fileID: 4459980375867001222}
   textCollider: {fileID: 18240658995544711}
   textColliderPadding: 0.01
-  hoverColor: {r: 0, g: 1, b: 0.91580486, a: 1}
-  selectedColor: {r: 0, g: 1, b: 0.91764706, a: 1}
+  hoverColor: {r: 0.5135991, g: 0.86415094, b: 0.83528197, a: 1}
+  selectedColor: {r: 0.014332486, g: 0.690566, b: 0.63239545, a: 1}
 --- !u!114 &8010773003720802726
 MonoBehaviour:
   m_ObjectHideFlags: 0

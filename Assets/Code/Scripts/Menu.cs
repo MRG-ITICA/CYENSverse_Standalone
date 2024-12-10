@@ -118,6 +118,7 @@ public class Menu : MonoBehaviour
         StartCoroutine(FindObjectOfType<PopUpController>().FadeOutPopUp());
         yield return new WaitUntil(() => !loadingEffect.IsLoading());
         loadingEffect.Hide();
+        FindObjectOfType<ContentController>().SetFloor360Mode(false);
         LoadCyensVerse();
     }
 

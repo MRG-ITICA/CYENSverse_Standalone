@@ -2489,7 +2489,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 532715025}
   m_LocalRotation: {x: 0.08715615, y: -0, z: -0, w: 0.99619466}
-  m_LocalPosition: {x: 0, y: 0, z: 0.62}
+  m_LocalPosition: {x: 0, y: 0, z: 0.63}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2500,7 +2500,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 10.000044, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.14, y: 1.24}
+  m_AnchoredPosition: {x: 0.14, y: 1.28}
   m_SizeDelta: {x: 70, y: 29.836}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &532715032
@@ -2543,10 +2543,10 @@ ParentConstraint:
   m_Enabled: 1
   serializedVersion: 2
   m_Weight: 1
-  m_TranslationAtRest: {x: 0.14, y: 1.24, z: 0.62}
+  m_TranslationAtRest: {x: 0.14, y: 1.28, z: 0.63}
   m_RotationAtRest: {x: 10.000054, y: 0, z: 0}
   m_TranslationOffsets:
-  - {x: 0.049999997, y: -0.121439934, z: 0.62}
+  - {x: 0.049999997, y: -0.08143997, z: 0.63}
   m_RotationOffsets:
   - {x: 10.000055, y: 0, z: 0}
   m_AffectTranslationX: 1
@@ -3689,6 +3689,7 @@ GameObject:
   - component: {fileID: 873653678}
   - component: {fileID: 873653680}
   - component: {fileID: 873653679}
+  - component: {fileID: 873653681}
   m_Layer: 5
   m_Name: EnglishPanel
   m_TagString: Untagged
@@ -3736,8 +3737,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b1d78aaac6f6420449c74f77b1b5e4fa, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3754,6 +3755,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 873653677}
   m_CullTransparentMesh: 1
+--- !u!65 &873653681
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873653677}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 42.01109, y: 26.060453, z: 1}
+  m_Center: {x: -0.27607742, y: -0.14790891, z: 0}
 --- !u!1 &875712129
 GameObject:
   m_ObjectHideFlags: 0
@@ -3958,7 +3980,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_Colliders:
-  - {fileID: 994844009}
+  - {fileID: 1059419694}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -4289,7 +4311,6 @@ GameObject:
   - component: {fileID: 994844012}
   - component: {fileID: 994844011}
   - component: {fileID: 994844010}
-  - component: {fileID: 994844009}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -4314,29 +4335,8 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 32.88, y: -1.198}
+  m_SizeDelta: {x: 31.59, y: -1.198}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!65 &994844009
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 994844007}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 30, y: 15, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &994844010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4374,7 +4374,7 @@ MonoBehaviour:
   m_text: "T\xFCrk\xE7e"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 73f6bb70d4ad28b478087eb1dd6177cc, type: 2}
-  m_sharedMaterial: {fileID: 5489306741818248021, guid: ee552ae7b89f04a4291adc7f868a674a,
+  m_sharedMaterial: {fileID: -3347533027018000585, guid: 73f6bb70d4ad28b478087eb1dd6177cc,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4441,7 +4441,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_renderer: {fileID: 994844012}
   m_maskType: 0
 --- !u!23 &994844012
@@ -4464,7 +4464,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5489306741818248021, guid: ee552ae7b89f04a4291adc7f868a674a, type: 2}
+  - {fileID: -3347533027018000585, guid: 73f6bb70d4ad28b478087eb1dd6177cc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4643,6 +4643,7 @@ GameObject:
   - component: {fileID: 1059419691}
   - component: {fileID: 1059419693}
   - component: {fileID: 1059419692}
+  - component: {fileID: 1059419694}
   m_Layer: 5
   m_Name: TurkishPanel
   m_TagString: Untagged
@@ -4690,8 +4691,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b1d78aaac6f6420449c74f77b1b5e4fa, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4708,6 +4709,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1059419690}
   m_CullTransparentMesh: 1
+--- !u!65 &1059419694
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059419690}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 41.456257, y: 25.540636, z: 1}
+  m_Center: {x: -0.0451374, y: -0.5046402, z: 0}
 --- !u!1 &1065460233
 GameObject:
   m_ObjectHideFlags: 0
@@ -5180,7 +5202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_Colliders:
-  - {fileID: 1838158064}
+  - {fileID: 873653681}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -7078,7 +7100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_Colliders:
-  - {fileID: 1698316221}
+  - {fileID: 1581586962}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -7319,6 +7341,7 @@ GameObject:
   - component: {fileID: 1581586959}
   - component: {fileID: 1581586961}
   - component: {fileID: 1581586960}
+  - component: {fileID: 1581586962}
   m_Layer: 5
   m_Name: GreekPanel
   m_TagString: Untagged
@@ -7366,8 +7389,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b1d78aaac6f6420449c74f77b1b5e4fa, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -7384,6 +7407,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1581586958}
   m_CullTransparentMesh: 1
+--- !u!65 &1581586962
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581586958}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 43.295586, y: 24.777998, z: 1.7452818}
+  m_Center: {x: -0.7365652, y: -0.7827617, z: 0.3726374}
 --- !u!1 &1586352106
 GameObject:
   m_ObjectHideFlags: 0
@@ -7771,7 +7815,6 @@ GameObject:
   - component: {fileID: 1698316224}
   - component: {fileID: 1698316223}
   - component: {fileID: 1698316222}
-  - component: {fileID: 1698316221}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -7796,29 +7839,8 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 43.49, y: -1.198}
+  m_SizeDelta: {x: 42.21, y: -1.198}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!65 &1698316221
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1698316219}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 30, y: 15, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1698316222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7856,7 +7878,7 @@ MonoBehaviour:
   m_text: "\u0395\u03BB\u03BB\u03B7\u03BD\u03B9\u03BA\u03AC"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 73f6bb70d4ad28b478087eb1dd6177cc, type: 2}
-  m_sharedMaterial: {fileID: 5489306741818248021, guid: ee552ae7b89f04a4291adc7f868a674a,
+  m_sharedMaterial: {fileID: -3347533027018000585, guid: 73f6bb70d4ad28b478087eb1dd6177cc,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -7923,7 +7945,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_renderer: {fileID: 1698316224}
   m_maskType: 0
 --- !u!23 &1698316224
@@ -7946,7 +7968,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5489306741818248021, guid: ee552ae7b89f04a4291adc7f868a674a, type: 2}
+  - {fileID: -3347533027018000585, guid: 73f6bb70d4ad28b478087eb1dd6177cc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8887,7 +8909,6 @@ GameObject:
   - component: {fileID: 1838158067}
   - component: {fileID: 1838158066}
   - component: {fileID: 1838158065}
-  - component: {fileID: 1838158064}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -8912,29 +8933,8 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 34.68, y: -1.198}
+  m_SizeDelta: {x: 33.7, y: -1.198}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!65 &1838158064
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1838158062}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 30, y: 15, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1838158065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8972,7 +8972,7 @@ MonoBehaviour:
   m_text: English
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 73f6bb70d4ad28b478087eb1dd6177cc, type: 2}
-  m_sharedMaterial: {fileID: 5489306741818248021, guid: ee552ae7b89f04a4291adc7f868a674a,
+  m_sharedMaterial: {fileID: -3347533027018000585, guid: 73f6bb70d4ad28b478087eb1dd6177cc,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -9039,7 +9039,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_renderer: {fileID: 1838158067}
   m_maskType: 0
 --- !u!23 &1838158067
@@ -9062,7 +9062,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5489306741818248021, guid: ee552ae7b89f04a4291adc7f868a674a, type: 2}
+  - {fileID: -3347533027018000585, guid: 73f6bb70d4ad28b478087eb1dd6177cc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15293,7 +15293,7 @@ PrefabInstance:
     - target: {fileID: 5093739700643164071, guid: 0b93fc48333eb454dad3ef329177174c,
         type: 3}
       propertyPath: messagesDuration
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5093739700643164071, guid: 0b93fc48333eb454dad3ef329177174c,
         type: 3}
@@ -15649,7 +15649,7 @@ Transform:
   m_GameObject: {fileID: 2878446323309939357}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
