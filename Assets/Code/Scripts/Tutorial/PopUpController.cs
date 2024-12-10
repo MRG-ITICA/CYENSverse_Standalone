@@ -116,7 +116,7 @@ public class PopUpController : MonoBehaviour
         }
 
         // Show open video instruction
-        if (timeVideos > 20 && !contentController.in360)
+        if (timeVideos > 10 && !contentController.in360 && !contentController.inFuture)
         {
             bool facingVideos = xrReferences.FacingVideos();
             if (!selectedVideo && facingVideos)
@@ -127,7 +127,7 @@ public class PopUpController : MonoBehaviour
         }
 
         // Show open pin instruction
-        if (timePins > 20 && !contentController.in360) {
+        if (timePins > 10 && !contentController.in360 && !contentController.inFuture) {
             bool facingPins = xrReferences.FacingPins();
             if (!selectedPin && facingPins)
             {

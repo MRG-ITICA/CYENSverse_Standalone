@@ -389,7 +389,7 @@ public class WordCloud : MonoBehaviour
         // wait a bit for words to fade out
         yield return new WaitForSeconds(2f);
 
-        LocalizeStringEvent localization = GetComponent<LocalizeStringEvent>();
+       /* LocalizeStringEvent localization = GetComponent<LocalizeStringEvent>();
         localization.StringReference.TableEntryReference = "Shared";
         localization.StringReference.RefreshString();
         // Show message about all users' selections
@@ -397,7 +397,7 @@ public class WordCloud : MonoBehaviour
 
         ShowAllUsersSelectionsWordCloud();
 
-        yield return new WaitForSeconds(allUserSelectionsDisplayTime);
+        yield return new WaitForSeconds(allUserSelectionsDisplayTime);*/
 
         DestroyWordVisuals();
 

@@ -439,6 +439,9 @@ public class Categories : Singleton<Categories>
 
     private void TransitionToFuture()
     {
+        ContentController contentController = FindObjectOfType<ContentController>();
+        contentController.inFuture = true;
+
         Clear360Data();
         trackCategoriesProgress = false;
 

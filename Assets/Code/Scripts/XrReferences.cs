@@ -13,12 +13,14 @@
 // *********************************************
 
 using SourceBase.Utilities.Helpers;
+using System;
 using System.Collections;
 using TriInspector;
 
 using Unity.XR.CoreUtils;
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.XR;
 using UnityEngine.XR.Hands;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -97,6 +99,11 @@ public class XrReferences : Singleton<XrReferences>
     private XRRayInteractor rightRayInteractor;
 
     public static XRRayInteractor RightRayInteractor => Instance.rightRayInteractor;
+
+    private DateTime headsetOff;
+    private DateTime headsetOn;
+
+    private bool previousHeadsetStatus = false;
 
     #endregion Variables
 
@@ -366,8 +373,23 @@ public class XrReferences : Singleton<XrReferences>
             {
                 bool userPresent = false;
                 bool presenceFeatureSupported = headDevice.TryGetFeatureValue(CommonUsages.userPresence, out userPresent);
+                if (!userPresent)
+                {
+                    headsetOff = DateTime.Now;
+                }
+                if (userPresent && !previousHeadsetStatus) { 
+                    headsetOn = DateTime.Now;
+                } else
+                {
+                }
+                if (headsetOn.TimeOfDay.TotalSeconds - headsetOff.TimeOfDay.TotalSeconds > 15)
+                {
+                    var activeScene = SceneManager.GetActiveScene();
+                    SceneManager.LoadScene(activeScene.buildIndex);
+                }
                 Debug.Log("presence feature supported " + presenceFeatureSupported + " userPresent is " + userPresent);
                 //OnHeadsetStatusChanged?.Invoke(userPresent);  <--- custom event to inform others
+                previousHeadsetStatus = userPresent;
             }
 
             yield return cooldown;

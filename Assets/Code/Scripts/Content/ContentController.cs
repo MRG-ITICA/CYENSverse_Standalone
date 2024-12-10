@@ -49,6 +49,8 @@ public class ContentController : MonoBehaviour
 
     private bool enteringImage = false;
 
+    public bool inFuture = false;
+
     [SerializeField]
     private FadeController fader;
 
@@ -230,7 +232,7 @@ public class ContentController : MonoBehaviour
     public IEnumerator FadeBeforeRestart()
     {
         fader.FadeFromTransparency(4f);
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(10);
         var activeScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(activeScene.buildIndex);
     }
