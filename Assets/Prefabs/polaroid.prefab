@@ -731,6 +731,11 @@ PrefabInstance:
       propertyPath: m_PokeFollowTransform
       value: 
       objectReference: {fileID: 8353621912600598737}
+    - target: {fileID: 1609951117977117263, guid: 0704114ae6550324088fc5543527284b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 527890ca31c8d974abcd94047fa4eb0f, type: 2}
     - target: {fileID: 2172131904838445945, guid: 0704114ae6550324088fc5543527284b,
         type: 3}
       propertyPath: m_Layer
@@ -769,7 +774,7 @@ PrefabInstance:
     - target: {fileID: 2251999747709705596, guid: 0704114ae6550324088fc5543527284b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.5
+      value: 7.3
       objectReference: {fileID: 0}
     - target: {fileID: 2251999747709705596, guid: 0704114ae6550324088fc5543527284b,
         type: 3}

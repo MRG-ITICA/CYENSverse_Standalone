@@ -64,6 +64,7 @@ public class Menu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        popUpController = FindObjectOfType<PopUpController>();
         if (autoLoadCyensVerse)
         {
             LoadCyensVerse();
@@ -113,9 +114,10 @@ public class Menu : MonoBehaviour
 
     IEnumerator Loading()
     {
+        popUpController.handAnimation.SetActive(false);
+        StartCoroutine(popUpController.FadeOutPopUp());
         loadingEffect.Show();
         loadingEffect.Load();
-        StartCoroutine(FindObjectOfType<PopUpController>().FadeOutPopUp());
         yield return new WaitUntil(() => !loadingEffect.IsLoading());
         loadingEffect.Hide();
         FindObjectOfType<ContentController>().SetFloor360Mode(false);
@@ -124,7 +126,8 @@ public class Menu : MonoBehaviour
 
     public void HoverExited()
     {
-        StopAllCoroutines();
+        StopCoroutine(Loading());
+        StopCoroutine(Hovering());
         ScaleDown();
         loadingEffect.Hide();
     }

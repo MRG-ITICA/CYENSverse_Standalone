@@ -37,7 +37,7 @@ public class PopUpController : MonoBehaviour
     #endregion
 
     [SerializeField]
-    private GameObject handAnimation;
+    public GameObject handAnimation;
 
     [SerializeField]
     private GameObject instructionVisual;
