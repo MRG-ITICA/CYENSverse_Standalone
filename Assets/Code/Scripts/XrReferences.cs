@@ -15,6 +15,7 @@
 using SourceBase.Utilities.Helpers;
 using System;
 using System.Collections;
+using System.Threading;
 using TriInspector;
 
 using Unity.XR.CoreUtils;
@@ -100,10 +101,8 @@ public class XrReferences : Singleton<XrReferences>
 
     public static XRRayInteractor RightRayInteractor => Instance.rightRayInteractor;
 
-    private DateTime headsetOff;
-    private DateTime headsetOn;
-
-    private bool previousHeadsetStatus = false;
+    private float headsetTimer;
+    private bool headsetOn = false;
 
     #endregion Variables
 
@@ -373,23 +372,26 @@ public class XrReferences : Singleton<XrReferences>
             {
                 bool userPresent = false;
                 bool presenceFeatureSupported = headDevice.TryGetFeatureValue(CommonUsages.userPresence, out userPresent);
-                if (!userPresent)
-                {
-                    headsetOff = DateTime.Now;
-                }
-                if (userPresent && !previousHeadsetStatus) { 
-                    headsetOn = DateTime.Now;
-                } else
-                {
-                }
-                if (headsetOn.TimeOfDay.TotalSeconds - headsetOff.TimeOfDay.TotalSeconds > 15)
+                if (userPresent && !headsetOn && headsetTimer > 15)
                 {
                     var activeScene = SceneManager.GetActiveScene();
                     SceneManager.LoadScene(activeScene.buildIndex);
+                    headsetOn = true;
                 }
-                Debug.Log("presence feature supported " + presenceFeatureSupported + " userPresent is " + userPresent);
-                //OnHeadsetStatusChanged?.Invoke(userPresent);  <--- custom event to inform others
-                previousHeadsetStatus = userPresent;
+                if (!userPresent)
+                {
+                    if (headsetOn)
+                    {
+                        headsetOn = false;
+                        headsetTimer = 0;
+                    }
+                    else
+                    {
+                        headsetTimer++;
+                    }
+                } 
+            
+                Debug.Log("presence feature supported " + presenceFeatureSupported + " userPresent is " + userPresent);               
             }
 
             yield return cooldown;
