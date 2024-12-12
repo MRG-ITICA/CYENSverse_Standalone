@@ -158,7 +158,7 @@ public class ContentController : MonoBehaviour
             {
                 child.gameObject.layer = 0;
             }
-            floor.transform.localScale = new Vector3(0.16f, 0.16f, 0.16f);
+            floor.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
         } else
         {
             border.SetActive(false);

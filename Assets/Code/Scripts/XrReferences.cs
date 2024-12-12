@@ -389,9 +389,7 @@ public class XrReferences : Singleton<XrReferences>
                     {
                         headsetTimer++;
                     }
-                } 
-            
-                Debug.Log("presence feature supported " + presenceFeatureSupported + " userPresent is " + userPresent);               
+                }           
             }
 
             yield return cooldown;

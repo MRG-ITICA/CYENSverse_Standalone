@@ -87,7 +87,7 @@ public class PolaroidController : MonoBehaviour
         if (polaroidActive)
         {
             PopUpController popUpController = FindObjectOfType<PopUpController>();
-            popUpController.ShowInstructionWithRayAnimation(popUpController.closeContentInstruction, 1, 4);
+            popUpController.ShowInstructionWithRayAnimation(popUpController.closeContentInstruction, 1, 5);
         }
     }
     public void CloseButtonHoverExited()

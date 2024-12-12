@@ -430,7 +430,7 @@ public class VideoController : MonoBehaviour
         if (videoPlayer.isPlaying && !contentController.in360)
         {
             PopUpController popUpController = FindObjectOfType<PopUpController>();
-            popUpController.ShowInstructionWithRayAnimation(popUpController.closeContentInstruction, 1, 4);
+            popUpController.ShowInstructionWithRayAnimation(popUpController.closeContentInstruction, 1, 5);
         }
     }
 

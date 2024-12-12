@@ -207,7 +207,7 @@ public class WordController : MonoBehaviour
 
     private IEnumerator Hovering()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.5f);
         text.fontMaterial.SetFloat(ShaderUtilities.ID_GlowPower, 0f);
         StartCoroutine(selected ? UnloadWord() : LoadWord());
     }
@@ -256,7 +256,7 @@ public class WordController : MonoBehaviour
         loadingEffect.Hide();
         ScaleDown();
         text.color = selected ? selectedColor : initialColor;
-        if (selected) text.fontMaterial.SetFloat(ShaderUtilities.ID_GlowPower, 0.8f);
+        if (selected) text.fontMaterial.SetFloat(ShaderUtilities.ID_GlowPower, 1f);
     }
 
     private void WordSelected()

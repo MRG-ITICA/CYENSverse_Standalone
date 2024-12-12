@@ -55,10 +55,6 @@ MonoBehaviour:
     m_Key: Raise
     m_Metadata:
       m_Items: []
-  - m_Id: 980228115681280
-    m_Key: Notice
-    m_Metadata:
-      m_Items: []
   - m_Id: 980258578911232
     m_Key: Language
     m_Metadata:

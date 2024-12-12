@@ -327,7 +327,7 @@ public class WordCloud : MonoBehaviour
         if (!wordSelected)
         {
             PopUpController popUpController = FindObjectOfType<PopUpController>();
-            popUpController.ShowInstructionWithRayAnimation(popUpController.futureWordInstruction, 0, 5);
+            popUpController.ShowInstructionWithRayAnimation(popUpController.futureWordInstruction, 0, 7);
         }
     }
 

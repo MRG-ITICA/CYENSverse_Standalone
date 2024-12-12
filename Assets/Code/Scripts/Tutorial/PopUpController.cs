@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Animations;
@@ -139,12 +140,10 @@ public class PopUpController : MonoBehaviour
 
     private IEnumerator Introduction()
     {
-        ShowInstructionWithRayAnimation(introductionInstructions[0], 3, 5);
-        yield return new WaitForSeconds(8);
-        ShowInstructionWithRayAnimation(introductionInstructions[1], 1, 4);
-        yield return new WaitForSeconds(5);
+        ShowInstructionWithRayAnimation(introductionInstructions[0], 3, 7);
+        yield return new WaitForSeconds(10);
         FindObjectOfType<LanguageSelection>().FadeIn();
-        ShowInstructionWithRayAnimation(introductionInstructions[2], 1, 6);
+        ShowInstructionWithRayAnimation(introductionInstructions[1], 1, 6);
     }
 
     // Called after user selects ring to enter main environment
@@ -183,9 +182,24 @@ public class PopUpController : MonoBehaviour
 
     public IEnumerator PopUps360()
     {
-        ShowInstructionWithImage(turnAroundInstruction, turnAroundImage, 2, 3);
-        yield return new WaitForSeconds(6);
-        ShowInstructionWithRayAnimation(openPolaroidInstruction, 1, 6);
+        ShowInstructionWithImage(turnAroundInstruction, turnAroundImage, 2, 5);
+        yield return new WaitForSeconds(5);
+        GameObject[] polaroids = GameObject.FindGameObjectsWithTag("mark");
+        bool showedPopUp = false;
+        float timer = 0;
+        while (!showedPopUp && timer < 15)
+        {
+            timer++;
+            foreach (GameObject polaroid in polaroids)
+            {
+                if (polaroid.GetComponent<Renderer>().isVisible)
+                {
+                    ShowInstructionWithRayAnimation(openPolaroidInstruction, 1, 6);
+                    showedPopUp = true;
+                    break;
+                }
+            }
+        }
     }
     
     private IEnumerator ActivateHandAnimation(float delay)

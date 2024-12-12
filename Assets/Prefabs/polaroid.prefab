@@ -826,6 +826,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4048804060088771712, guid: 0704114ae6550324088fc5543527284b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4343275028017108159, guid: 0704114ae6550324088fc5543527284b,
         type: 3}
       propertyPath: m_Layer
@@ -864,7 +869,7 @@ PrefabInstance:
     - target: {fileID: 8198865809023334626, guid: 0704114ae6550324088fc5543527284b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0023
+      value: 0.37
       objectReference: {fileID: 0}
     - target: {fileID: 8198865809023334626, guid: 0704114ae6550324088fc5543527284b,
         type: 3}
@@ -1055,6 +1060,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PokeConfiguration.m_ConstantValue.m_InteractionDepthOffset
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 9028179146538046933, guid: 0704114ae6550324088fc5543527284b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9028179146538046933, guid: 0704114ae6550324088fc5543527284b,
         type: 3}

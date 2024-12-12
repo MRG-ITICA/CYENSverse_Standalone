@@ -82,7 +82,7 @@ public class Language : MonoBehaviour
         menu.Show();
         FindObjectOfType<ContentController>().SetFloor360Mode(true);
         PopUpController popUpController = FindObjectOfType<PopUpController>();
-        popUpController.ShowInstructionWithRayAnimation(popUpController.introductionInstructions[3], 2, 5);
+        popUpController.ShowInstructionWithRayAnimation(popUpController.introductionInstructions[2], 2, 5);
     }
 
     private void SaveLanguage()
