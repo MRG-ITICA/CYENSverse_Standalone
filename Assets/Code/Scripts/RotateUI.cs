@@ -22,9 +22,12 @@ public class RotateUI : MonoBehaviour
     [SerializeField]
     float anglesY = 0;
 
+    [SerializeField]
+    float anglesX = 0;
+
     private void Start()
     {
-        XrReferences.Instance.RotateTowardsCamera(transform, 50, anglesY, null);
+        XrReferences.Instance.RotateTowardsCamera(transform, anglesX, anglesY, null);
     }
 
     // Update is called once per frame

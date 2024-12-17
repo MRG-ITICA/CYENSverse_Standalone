@@ -43,12 +43,6 @@ public class Menu : MonoBehaviour
 
     private FadeController fader;
 
-    public VideoClip menuSkyboxVideo;
-    public VideoPlayer skyboxPlayer;
-
-    [SerializeField]
-    private Material categorySkybox;
-
     [SerializeField]
     private PopUpController popUpController;
 
@@ -82,8 +76,6 @@ public class Menu : MonoBehaviour
     public void Show()
     {
         gameObject.SetActive(true);
-        RenderSettings.skybox = categorySkybox;
-        skyboxPlayer.clip = menuSkyboxVideo;
     }
 
     #endregion Unity Messages

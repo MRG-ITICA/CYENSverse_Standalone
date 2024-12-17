@@ -950,6 +950,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 482117856037844994, guid: 4396a831358f4fe49bb64502f4535264,
         type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 5965894795094375560}
+    - target: {fileID: 482117856037844994, guid: 4396a831358f4fe49bb64502f4535264,
+        type: 3}
       propertyPath: fadeOutColor.a
       value: 1
       objectReference: {fileID: 0}
@@ -1049,3 +1054,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd61bc8b7f3861a4d9f580b19426a2d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &5965894795094375560 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7610738751630052620, guid: 4396a831358f4fe49bb64502f4535264,
+    type: 3}
+  m_PrefabInstance: {fileID: 4275564382442107268}
+  m_PrefabAsset: {fileID: 0}

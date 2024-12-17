@@ -18,6 +18,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
+using UnityEngine.Video;
 
 public class ContentController : MonoBehaviour
 {
@@ -37,7 +38,6 @@ public class ContentController : MonoBehaviour
 
     public Categories categoryManager;
 
-    public Menu menu;
     public WordCloud wordCloud;
     public Credits credits;
 
@@ -70,6 +70,16 @@ public class ContentController : MonoBehaviour
     public bool in360 = false;
 
     private float time = 0;
+
+    [SerializeField]
+    private Material categorySkybox;
+
+    public VideoClip menuSkyboxVideo;
+
+    public VideoPlayer skyboxPlayer;
+
+    [SerializeField]
+    public Menu[] menus;
 
     void Awake()
     {
@@ -222,11 +232,6 @@ public class ContentController : MonoBehaviour
     public void RestartExperience()
     {
         StartCoroutine(FadeBeforeRestart());
-        //credits.SetActive(false);
-        
-        /*menu.SetActive(true);
-        leftRayInteractor.raycastMask = uiMask;
-        rightRayInteractor.raycastMask = uiMask;*/
     }
 
     public IEnumerator FadeBeforeRestart()
@@ -240,5 +245,11 @@ public class ContentController : MonoBehaviour
     public bool EnteringOther360Image()
     {
         return enteringImage;
+    }
+
+    public void ShowMenuSkybox()
+    {
+        RenderSettings.skybox = categorySkybox;
+        skyboxPlayer.clip = menuSkyboxVideo;
     }
 }

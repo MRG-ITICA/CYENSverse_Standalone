@@ -72,7 +72,7 @@ public class XrReferences : Singleton<XrReferences>
 
     [Title("Hands")]
     [SerializeField]
-    private GameObject leftHand;
+    public GameObject leftHand;
 
     public static GameObject LeftHand => Instance.leftHand;
 
@@ -87,7 +87,7 @@ public class XrReferences : Singleton<XrReferences>
     public static XRRayInteractor LeftRayInteractor => Instance.leftRayInteractor;
 
     [SerializeField]
-    private GameObject rightHand;
+    public GameObject rightHand;
 
     public static GameObject RightHand => Instance.rightHand;
 
@@ -102,7 +102,7 @@ public class XrReferences : Singleton<XrReferences>
     public static XRRayInteractor RightRayInteractor => Instance.rightRayInteractor;
 
     private float headsetTimer;
-    private bool headsetOn = false;
+    public bool headsetOn = false;
 
     #endregion Variables
 
@@ -372,7 +372,7 @@ public class XrReferences : Singleton<XrReferences>
             {
                 bool userPresent = false;
                 bool presenceFeatureSupported = headDevice.TryGetFeatureValue(CommonUsages.userPresence, out userPresent);
-                if (userPresent && !headsetOn && headsetTimer > 15)
+                if (userPresent && !headsetOn && headsetTimer > 5)
                 {
                     var activeScene = SceneManager.GetActiveScene();
                     SceneManager.LoadScene(activeScene.buildIndex);

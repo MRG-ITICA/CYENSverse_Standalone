@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Localization.Components;
 using UnityEngine.Localization.SmartFormat.Core.Parsing;
+using UnityEngine.UIElements;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class Language : MonoBehaviour
@@ -31,8 +32,7 @@ public class Language : MonoBehaviour
     [SerializeField]
     private GameObject tutorial;
 
-    [SerializeField]
-    private Menu menu;
+    private ContentController contentController;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +43,8 @@ public class Language : MonoBehaviour
         initialColor.a = initialFade;
         interactable = GetComponent<XRSimpleInteractable>();
         loadingEffect = GetComponentInChildren<SpinnerController>(true);
+
+        contentController = FindObjectOfType<ContentController>();
     }
 
     public void OnHoverEntered()
@@ -79,7 +81,13 @@ public class Language : MonoBehaviour
         interactable.hoverExited.RemoveAllListeners();
         SaveLanguage();
         tutorial.SetActive(false);
-        menu.Show();
+
+        Menu[] menus = contentController.menus;
+        foreach (var menu in menus)
+        {
+            menu.Show();
+        }
+        contentController.ShowMenuSkybox();
         FindObjectOfType<ContentController>().SetFloor360Mode(true);
         PopUpController popUpController = FindObjectOfType<PopUpController>();
         popUpController.ShowInstructionWithRayAnimation(popUpController.introductionInstructions[2], 2, 5);

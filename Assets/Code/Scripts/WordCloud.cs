@@ -248,7 +248,7 @@ public class WordCloud : MonoBehaviour
 
         // Fade message out
         elapsedTime = 0f;
-        while (elapsedTime < .5f)
+        while (elapsedTime < 2f)
         {
             messageCanvas.alpha -= alphaDeltaProgress;
             yield return waitTime;
@@ -388,16 +388,6 @@ public class WordCloud : MonoBehaviour
 
         // wait a bit for words to fade out
         yield return new WaitForSeconds(2f);
-
-       /* LocalizeStringEvent localization = GetComponent<LocalizeStringEvent>();
-        localization.StringReference.TableEntryReference = "Shared";
-        localization.StringReference.RefreshString();
-        // Show message about all users' selections
-        yield return StartCoroutine(ShowMessage(allUserSelectionText, messagesDuration));
-
-        ShowAllUsersSelectionsWordCloud();
-
-        yield return new WaitForSeconds(allUserSelectionsDisplayTime);*/
 
         DestroyWordVisuals();
 

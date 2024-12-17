@@ -140,10 +140,30 @@ public class PopUpController : MonoBehaviour
 
     private IEnumerator Introduction()
     {
-        ShowInstructionWithRayAnimation(introductionInstructions[0], 3, 7);
-        yield return new WaitForSeconds(10);
-        FindObjectOfType<LanguageSelection>().FadeIn();
-        ShowInstructionWithRayAnimation(introductionInstructions[1], 1, 6);
+        bool showed = false;
+        float timer = 0;
+        ShowInstructionWithRayAnimation(introductionInstructions[0], 0, 15);
+        yield return new WaitForSeconds(2);
+        while (!((xrReferences.leftHand.GetComponentInChildren<Renderer>().isVisible || xrReferences.rightHand.GetComponentInChildren<Renderer>().isVisible)
+            && xrReferences.headsetOn))
+        {
+            timer += Time.deltaTime;
+            if (timer > 15)
+            {
+                FindObjectOfType<LanguageSelection>().FadeIn();
+                ShowInstructionWithRayAnimation(introductionInstructions[1], 1, 6);
+                showed = true;
+                break;
+            }
+
+            yield return null;
+        }
+        if (!showed)
+        {
+            yield return new WaitForSeconds(7);
+            FindObjectOfType<LanguageSelection>().FadeIn();
+            ShowInstructionWithRayAnimation(introductionInstructions[1], 1, 6);
+        } 
     }
 
     // Called after user selects ring to enter main environment

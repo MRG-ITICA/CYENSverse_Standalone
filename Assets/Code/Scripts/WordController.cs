@@ -80,6 +80,9 @@ public class WordController : MonoBehaviour
         initialColor = text.color;
         initialColor.a = initialFade;
         user = GetComponentInParent<UsersFile>();
+
+        interactable.hoverEntered.AddListener(delegate { OnHoverEntered(); });
+        interactable.hoverExited.AddListener(delegate { OnHoverExit(); });
     }
 
     private void Update()

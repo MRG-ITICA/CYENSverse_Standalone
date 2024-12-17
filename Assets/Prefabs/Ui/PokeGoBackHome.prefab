@@ -1637,6 +1637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angularSpeed: 15
   anglesY: 0
+  anglesX: 0
 --- !u!4 &9157185818317336429 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f0471b2e111bec84e8f1451825939bae,
