@@ -248,7 +248,7 @@ public class WordCloud : MonoBehaviour
 
         // Fade message out
         elapsedTime = 0f;
-        while (elapsedTime < 2f)
+        while (elapsedTime < 0.5f)
         {
             messageCanvas.alpha -= alphaDeltaProgress;
             yield return waitTime;

@@ -32771,7 +32771,7 @@ PrefabInstance:
     - target: {fileID: 5093739700643164071, guid: 0b93fc48333eb454dad3ef329177174c,
         type: 3}
       propertyPath: messagesDuration
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5093739700643164071, guid: 0b93fc48333eb454dad3ef329177174c,
         type: 3}
