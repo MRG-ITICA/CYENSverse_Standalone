@@ -137,6 +137,14 @@ public class ContentController : MonoBehaviour
 
     public void EnteringImage(IImageController pinImageController)
     {
+        VideoController[] videos = FindObjectsOfType<VideoController>();
+        foreach (VideoController videoController in videos)
+        {
+            if (videoController.GetComponent<VideoPlayer>().isPlaying)
+            {
+                videoController.CloseVideo();
+            }
+        }
         Debug.Log("entering image");
         SetFloor360Mode(true);
 
