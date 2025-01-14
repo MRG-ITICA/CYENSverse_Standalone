@@ -28,6 +28,9 @@ public class PopUpController : MonoBehaviour
     public string exit360Instruction;
 
     [SerializeField]
+    public string exitNested360Instruction;
+
+    [SerializeField]
     public string openPolaroidInstruction;
 
     [SerializeField]

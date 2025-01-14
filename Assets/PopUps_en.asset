@@ -299,6 +299,10 @@ MonoBehaviour:
     m_Localized: English
     m_Metadata:
       m_Items: []
+  - m_Id: 14046090480209920
+    m_Localized: Aim the ray at the pin to go back to the virtual space
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

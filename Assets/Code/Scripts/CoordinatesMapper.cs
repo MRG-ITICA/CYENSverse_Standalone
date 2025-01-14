@@ -52,10 +52,14 @@ public class CoordinatesMapper : MonoBehaviour
     private IImageController originalImageController;
     private IImageController parentImageController;
 
+    private ContentController contentController;
+
     void Awake()
     {
         nestedPinsAssetsHandler = GetComponent<NestedPinsAssetsHandler>();
         XRCamera = XrReferences.XrCameraTransform;
+
+        contentController = FindObjectOfType<ContentController>();
     }
 
     void Start()
@@ -156,10 +160,12 @@ public class CoordinatesMapper : MonoBehaviour
         goBack360.gameObject.SetActive(inNestedImage);
         if (!inNestedImage)
         {
+            contentController.inNested360 = false;
             goBackHome.SetActive(true);
             LeanTween.scale(goBackHome, new Vector3(20, 20, 20), 1f);
         } else
         {
+            contentController.inNested360 = true;
             goBackHome.SetActive(false);
         }
 

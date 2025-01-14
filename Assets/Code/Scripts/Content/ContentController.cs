@@ -16,6 +16,7 @@ using System.Collections;
 using System.Data.Common;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.Rendering.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.Video;
@@ -68,8 +69,11 @@ public class ContentController : MonoBehaviour
 
     public bool openedPolaroidBefore = false;
     public bool in360 = false;
+    public bool inNested360 = false;
 
-    private float time = 0;
+    private float timeWarningExit = 0;
+    private float timeExit = 0;
+    private FadeController fadeController;
 
     [SerializeField]
     private Material categorySkybox;
@@ -95,21 +99,36 @@ public class ContentController : MonoBehaviour
 
         credits.OnCreditsSequenceFinished += RestartExperience;
         wordCloud.OnFutureSequenceEnded += ShowCredits;
+
+        fadeController = XrReferences.FadeToBlack;    
     }
     private void Update()
     {
         if (in360)
         {
-            time += Time.deltaTime;
-            if (time >= 30)
+            timeWarningExit += Time.deltaTime;
+            timeExit += Time.deltaTime;
+            if (timeWarningExit >= 30)
             {
                 PopUpController popUpController = FindObjectOfType<PopUpController>();
-                popUpController.ShowInstructionWithRayAnimation(popUpController.exit360Instruction, 1, 6);
-                time = 0;
+                if (inNested360)
+                {
+                    popUpController.ShowInstructionWithRayAnimation(popUpController.exitNested360Instruction, 1, 6);
+                } else
+                {
+                    popUpController.ShowInstructionWithRayAnimation(popUpController.exit360Instruction, 1, 6);
+                }
+                timeWarningExit = 0;
+            }
+            if (timeExit >= 45)
+            {
+                fadeController.LoadMainScene(false);
+                timeExit = 0;
             }
         } else
         {
-            time = 0;
+            timeWarningExit = 0;
+            timeExit = 0;
         }
     }
 

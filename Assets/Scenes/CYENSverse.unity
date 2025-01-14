@@ -829,7 +829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd61bc8b7f3861a4d9f580b19426a2d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 1
+  duration: 1.2
   loadingColor: {r: 1, g: 1, b: 1, a: 1}
   fadeOutColor: {r: 0.3, g: 0.3, b: 0.3, a: 1}
   audioSource: {fileID: 0}
@@ -1699,7 +1699,7 @@ PrefabInstance:
     - target: {fileID: 7073508512689920166, guid: a0cb7b106284e9548892f2e4ebf21fdf,
         type: 3}
       propertyPath: duration
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 7073508512689920166, guid: a0cb7b106284e9548892f2e4ebf21fdf,
         type: 3}
@@ -4104,7 +4104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd61bc8b7f3861a4d9f580b19426a2d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 1
+  duration: 1.2
   loadingColor: {r: 1, g: 1, b: 1, a: 1}
   fadeOutColor: {r: 0.3, g: 0.3, b: 0.3, a: 1}
   audioSource: {fileID: 0}
@@ -4465,7 +4465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd61bc8b7f3861a4d9f580b19426a2d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 1
+  duration: 1.2
   loadingColor: {r: 1, g: 1, b: 1, a: 1}
   fadeOutColor: {r: 0.3, g: 0.3, b: 0.3, a: 1}
   audioSource: {fileID: 0}
@@ -6267,7 +6267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd61bc8b7f3861a4d9f580b19426a2d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 1
+  duration: 1.2
   loadingColor: {r: 1, g: 1, b: 1, a: 1}
   fadeOutColor: {r: 0.3, g: 0.3, b: 0.3, a: 1}
   audioSource: {fileID: 0}
@@ -6835,6 +6835,7 @@ MonoBehaviour:
   pinInstruction: Pin
   videoInstruction: Video
   exit360Instruction: Go Back
+  exitNested360Instruction: Go Back Nested
   openPolaroidInstruction: Polaroid
   closeContentInstruction: Close
   futureWordInstruction: Word
@@ -8321,7 +8322,7 @@ PrefabInstance:
     - target: {fileID: 7073508512689920166, guid: a0cb7b106284e9548892f2e4ebf21fdf,
         type: 3}
       propertyPath: duration
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 7073508512689920166, guid: a0cb7b106284e9548892f2e4ebf21fdf,
         type: 3}
@@ -8923,7 +8924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd61bc8b7f3861a4d9f580b19426a2d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 1
+  duration: 1.2
   loadingColor: {r: 1, g: 1, b: 1, a: 1}
   fadeOutColor: {r: 0.3, g: 0.3, b: 0.3, a: 1}
   audioSource: {fileID: 0}
@@ -9378,7 +9379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd61bc8b7f3861a4d9f580b19426a2d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 1
+  duration: 1.2
   loadingColor: {r: 1, g: 1, b: 1, a: 1}
   fadeOutColor: {r: 0.3, g: 0.3, b: 0.3, a: 1}
   audioSource: {fileID: 0}
@@ -13500,7 +13501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd61bc8b7f3861a4d9f580b19426a2d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 1
+  duration: 1.2
   loadingColor: {r: 1, g: 1, b: 1, a: 1}
   fadeOutColor: {r: 0.3, g: 0.3, b: 0.3, a: 1}
   audioSource: {fileID: 0}
@@ -14756,7 +14757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd61bc8b7f3861a4d9f580b19426a2d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 1
+  duration: 1.2
   loadingColor: {r: 1, g: 1, b: 1, a: 1}
   fadeOutColor: {r: 0.3, g: 0.3, b: 0.3, a: 1}
   audioSource: {fileID: 0}
@@ -17341,7 +17342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd61bc8b7f3861a4d9f580b19426a2d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 1
+  duration: 1.2
   loadingColor: {r: 1, g: 1, b: 1, a: 1}
   fadeOutColor: {r: 0.3, g: 0.3, b: 0.3, a: 1}
   audioSource: {fileID: 0}
@@ -20801,7 +20802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd61bc8b7f3861a4d9f580b19426a2d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 1
+  duration: 1.2
   loadingColor: {r: 1, g: 1, b: 1, a: 1}
   fadeOutColor: {r: 0.3, g: 0.3, b: 0.3, a: 1}
   audioSource: {fileID: 0}
@@ -21044,7 +21045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd61bc8b7f3861a4d9f580b19426a2d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 1
+  duration: 1.2
   loadingColor: {r: 1, g: 1, b: 1, a: 1}
   fadeOutColor: {r: 0.3, g: 0.3, b: 0.3, a: 1}
   audioSource: {fileID: 0}
@@ -21718,7 +21719,7 @@ PrefabInstance:
     - target: {fileID: 7073508512689920166, guid: a0cb7b106284e9548892f2e4ebf21fdf,
         type: 3}
       propertyPath: duration
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 7073508512689920166, guid: a0cb7b106284e9548892f2e4ebf21fdf,
         type: 3}
@@ -23582,7 +23583,7 @@ PrefabInstance:
     - target: {fileID: 7073508512689920166, guid: a0cb7b106284e9548892f2e4ebf21fdf,
         type: 3}
       propertyPath: duration
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 7073508512689920166, guid: a0cb7b106284e9548892f2e4ebf21fdf,
         type: 3}
@@ -25242,7 +25243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd61bc8b7f3861a4d9f580b19426a2d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 1
+  duration: 1.2
   loadingColor: {r: 1, g: 1, b: 1, a: 1}
   fadeOutColor: {r: 0.3, g: 0.3, b: 0.3, a: 1}
   audioSource: {fileID: 0}
@@ -40098,6 +40099,7 @@ MonoBehaviour:
   viewedMaterial: {fileID: 2100000, guid: 906ecb07aea1ed142bf055e5622624f7, type: 2}
   openedPolaroidBefore: 0
   in360: 0
+  inNested360: 0
   categorySkybox: {fileID: 2100000, guid: c677e3d7184a4ae49870259abeb8d85b, type: 2}
   menuSkyboxVideo: {fileID: 32900000, guid: 59410712f9b2232469e290650d255f62, type: 3}
   skyboxPlayer: {fileID: 1802405514}
